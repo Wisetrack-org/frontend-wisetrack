@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Wisetrack-org</string>
+    <string name="title_activity_main">Wisetrack-org</string>
+    <string name="package_name">com.wisetrack.app</string>
+    <string name="custom_url_scheme">com.wisetrack.app</string>
+</resources>
