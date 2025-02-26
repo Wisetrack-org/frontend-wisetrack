@@ -1,0 +1,32 @@
+{
+  "Monday": [
+    { "time": "9:00 AM - 10:00 AM", "subject": "Operating Systems", "teacher": "Dr. Rajesh", "color": "bg-blue-500" },
+    { "time": "10:00 AM - 11:00 AM", "subject": "Computer Networks", "teacher": "Dr. Priya", "color": "bg-green-500" },
+    { "time": "11:00 AM - 12:00 PM", "subject": "Software Engineering", "teacher": "Dr. Alok", "color": "bg-yellow-500" },
+    { "time": "1:00 PM - 3:00 PM", "subject": "OS Lab", "teacher": "Prof. Rohan", "color": "bg-red-500" }
+  ],
+  "Tuesday": [
+    { "time": "9:00 AM - 10:00 AM", "subject": "AI", "teacher": "Dr. Sneha", "color": "bg-purple-500" },
+    { "time": "10:00 AM - 11:00 AM", "subject": "Web Tech", "teacher": "Dr. Nitin", "color": "bg-teal-500" },
+    { "time": "11:00 AM - 12:00 PM", "subject": "DBMS", "teacher": "Dr. Swati", "color": "bg-orange-500" },
+    { "time": "1:00 PM - 3:00 PM", "subject": "Web Lab", "teacher": "Prof. Anjali", "color": "bg-pink-500" }
+  ],
+  "Wednesday": [
+    { "time": "9:00 AM - 10:00 AM", "subject": "ML", "teacher": "Dr. Arvind", "color": "bg-indigo-500" },
+    { "time": "10:00 AM - 11:00 AM", "subject": "Cloud", "teacher": "Dr. Manisha", "color": "bg-lime-500" },
+    { "time": "11:00 AM - 12:00 PM", "subject": "HCI", "teacher": "Dr. Sandeep", "color": "bg-cyan-500" },
+    { "time": "1:00 PM - 3:00 PM", "subject": "DBMS Lab", "teacher": "Prof. Kiran", "color": "bg-rose-500" }
+  ],
+  "Thursday": [
+    { "time": "9:00 AM - 10:00 AM", "subject": "Compilers", "teacher": "Dr. Pankaj", "color": "bg-gray-500" },
+    { "time": "10:00 AM - 11:00 AM", "subject": "Embedded", "teacher": "Dr. Seema", "color": "bg-emerald-500" },
+    { "time": "11:00 AM - 12:00 PM", "subject": "IoT", "teacher": "Dr. Amit", "color": "bg-violet-500" },
+    { "time": "1:00 PM - 3:00 PM", "subject": "AI & ML Lab", "teacher": "Prof. Vishal", "color": "bg-red-400" }
+  ],
+  "Friday": [
+    { "time": "9:00 AM - 10:00 AM", "subject": "Blockchain", "teacher": "Dr. Ramesh", "color": "bg-fuchsia-500" },
+    { "time": "10:00 AM - 11:00 AM", "subject": "Big Data", "teacher": "Dr. Kavita", "color": "bg-sky-500" },
+    { "time": "11:00 AM - 12:00 PM", "subject": "Soft Testing", "teacher": "Dr. Sunil", "color": "bg-amber-500" },
+    { "time": "1:00 PM - 3:00 PM", "subject": "Testing Lab", "teacher": "Prof. Shweta", "color": "bg-green-400" }
+  ]
+}
