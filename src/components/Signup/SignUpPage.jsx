@@ -36,7 +36,7 @@ export default function SignUpPage() {
             }
         } catch (error) {
             console.error("Error during signup:", error);
-            alert("An error occurred during signup.");
+            // alert("An error occurred during signup.");
         }
     };
 
