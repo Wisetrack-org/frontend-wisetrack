@@ -9,16 +9,36 @@ export default function SignUpPage() {
         date_of_birth: "2000-01-16",
         enrollment_date: "2023-09-01",
         university_id: 1,
-
     });
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert("Form submitted", formData);
+
+        try {
+            const response = await fetch("https://nodebackend-wisetrack-production.up.railway.app/api/studentSignup", { // Replace '/signup' with your backend's signup endpoint
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                alert("Signup successful: " + JSON.stringify(data)); // Show response from backend
+                // Optionally redirect or clear form
+            } else {
+                const errorData = await response.json();
+                alert("Signup failed: " + JSON.stringify(errorData));
+            }
+        } catch (error) {
+            console.error("Error during signup:", error);
+            alert("An error occurred during signup.");
+        }
     };
 
     return (
