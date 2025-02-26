@@ -1,15 +1,3 @@
-
-// function App() {
-
-//   return (
-//     <>
-
-//     </>
-//   )
-// }
-
-// export default App
-
 import { RouterProvider } from "react-router-dom";
 import AppRouter from "./router/AppRouter";
 
