@@ -29,11 +29,10 @@ export default function SignUpPage() {
 
             if (response.ok) {
                 const data = await response.json();
-                alert("Signup successful: " + JSON.stringify(data)); // Show response from backend
-                // Optionally redirect or clear form
+                // alert("Signup successful: " + JSON.stringify(data));
             } else {
                 const errorData = await response.json();
-                alert("Signup failed: " + JSON.stringify(errorData));
+                // alert("Signup failed: " + JSON.stringify(errorData));
             }
         } catch (error) {
             console.error("Error during signup:", error);
