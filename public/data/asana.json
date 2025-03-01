@@ -1,0 +1,63 @@
+[
+    {
+      "name": "Tadasana (Mountain Pose)",
+      "image": "https://www.yogajournal.com/wp-content/uploads/2021/06/Tadasana_Mountain.jpg",
+      "benefits": "Improves posture, strengthens thighs, knees, and ankles, and enhances focus."
+    },
+    {
+      "name": "Vrikshasana (Tree Pose)",
+      "image": "https://www.yogajournal.com/wp-content/uploads/2021/06/Vrikshasana_Tree.jpg",
+      "benefits": "Improves balance, strengthens legs, and enhances concentration."
+    },
+    {
+      "name": "Bhujangasana (Cobra Pose)",
+      "image": "https://www.yogajournal.com/wp-content/uploads/2021/06/Bhujangasana_Cobra.jpg",
+      "benefits": "Strengthens the spine, relieves back pain, and stretches chest and shoulders."
+    },
+    {
+      "name": "Adho Mukha Svanasana (Downward Dog Pose)",
+      "image": "https://www.yogajournal.com/wp-content/uploads/2021/06/Adho_Mukha_Svanasana.jpg",
+      "benefits": "Strengthens arms, legs, and core, improves blood circulation, and stretches muscles."
+    },
+    {
+      "name": "Paschimottanasana (Seated Forward Bend)",
+      "image": "https://www.yogajournal.com/wp-content/uploads/2021/06/Paschimottanasana.jpg",
+      "benefits": "Stretches spine, hamstrings, and lower back, improves digestion, and reduces stress."
+    },
+    {
+      "name": "Dhanurasana (Bow Pose)",
+      "image": "https://www.yogajournal.com/wp-content/uploads/2021/06/Dhanurasana_Bow.jpg",
+      "benefits": "Strengthens back and core, improves posture, and relieves stress."
+    },
+    {
+      "name": "Utkatasana (Chair Pose)",
+      "image": "https://www.yogajournal.com/wp-content/uploads/2021/06/Utkatasana_Chair.jpg",
+      "benefits": "Strengthens thighs, ankles, and spine, and enhances endurance."
+    },
+    {
+      "name": "Padmasana (Lotus Pose)",
+      "image": "https://www.yogajournal.com/wp-content/uploads/2021/06/Padmasana_Lotus.jpg",
+      "benefits": "Calms the mind, improves posture, and enhances meditation practice."
+    },
+    {
+      "name": "Trikonasana (Triangle Pose)",
+      "image": "https://www.yogajournal.com/wp-content/uploads/2021/06/Trikonasana_Triangle.jpg",
+      "benefits": "Improves flexibility, strengthens legs, and stretches the spine."
+    },
+    {
+      "name": "Setu Bandhasana (Bridge Pose)",
+      "image": "https://www.yogajournal.com/wp-content/uploads/2021/06/Setu_Bandhasana_Bridge.jpg",
+      "benefits": "Strengthens back, relieves lower back pain, and improves digestion."
+    },
+    {
+      "name": "Navasana (Boat Pose)",
+      "image": "https://www.yogajournal.com/wp-content/uploads/2021/06/Navasana_Boat.jpg",
+      "benefits": "Strengthens core, improves balance, and stimulates digestion."
+    },
+    {
+      "name": "Savasana (Corpse Pose)",
+      "image": "https://www.yogajournal.com/wp-content/uploads/2021/06/Savasana_Corpse.jpg",
+      "benefits": "Relaxes the body, reduces stress, and improves mental clarity."
+    }
+  ]
+  
