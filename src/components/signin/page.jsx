@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
 const Signin = () => {
   const [data, setData] = useState({ email: "", password: "" });
-  const navigate = useNavigate();
   const { login } = useAuth();
   const [error, setError] = useState("");
 
@@ -33,14 +31,13 @@ const Signin = () => {
       if (response.ok) {
         const responseData = await response.json();
         console.log("Success:", responseData);
-        await login(responseData.user || responseData.data);
         const user = {
           ...responseData.data,
           token: document.cookie.split('; ')
                  .find(row => row.startsWith('Authorization='))
                  ?.split('=')[1]
         };
-        await login(user);
+        await login({user, role: "student"});
       } else {
         const errorData = await response.json();
         console.error("Error:", errorData);

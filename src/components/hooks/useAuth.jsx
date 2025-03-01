@@ -15,8 +15,16 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (data) => {
     setUser(data);
-    navigate("/studentProfile");
-  };
+    if (data.role === "student") {
+        navigate("/studentProfile");
+    } else if (data.role === "teacher") {
+        navigate("/teacherDashboard");
+    } else if (data.role === "admin") {
+        navigate("/adminDashboard");
+    } else {
+        navigate("/landingPage");
+    }
+};
 
   const logout = () => {
     setUser(null);
