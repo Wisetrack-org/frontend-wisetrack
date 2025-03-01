@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import timetableData from "../../data/timetable.json"; // Import JSON file
+import timetableData from "../../../public/data/timetable.json"; // Import JSON file
 
 const Schedule = () => {
   const [schedule, setSchedule] = useState({});
