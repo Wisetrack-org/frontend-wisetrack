@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FaPlay, FaPause, FaUserMd, FaSpa } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
 
 const meditationVideos = [
   { id: 1, title: "Guided Meditation for Beginners", url: "https://www.youtube.com/embed/inpok4MKVLM" },
@@ -13,8 +15,16 @@ const trainers = [
 ];
 
 const YogaMeditation = () => {
+
+  const navigate = useNavigate();
+
+  const getNewPose = () => {
+    navigate("/dailyYogaChallenge");  // Navigate to the correct route
+  };
+
+
   const [playing, setPlaying] = useState(false);
-  const [pose, setPose] = useState("Mountain Pose (Tadasana)");
+
   const music = new Audio("https://www.bensound.com/bensound-music/bensound-relaxing.mp3");
 
   const toggleMusic = () => {
@@ -26,20 +36,21 @@ const YogaMeditation = () => {
     setPlaying(!playing);
   };
 
-  const getNewPose = () => {
-    const poses = ["Downward Dog", "Tree Pose", "Warrior II", "Child’s Pose", "Cobra Pose"];
-    setPose(poses[Math.floor(Math.random() * poses.length)]);
-  };
+
 
   return (
     <div className="min-h-screen bg-[#0a0a1a] text-white px-6 py-10 flex flex-col items-center">
       <h1 className="text-4xl font-bold text-[#1e3a8a] mb-6">Yoga & Meditation</h1>
-      
+
       {/* Daily Yoga Challenge */}
       <div className="bg-[#1e3a8a] p-4 rounded-xl text-center shadow-lg w-full max-w-md">
         <h2 className="text-xl font-semibold">Today's Yoga Challenge</h2>
-        <p className="text-lg mt-2">{pose}</p>
-        <button onClick={getNewPose} className="mt-3 bg-[#142654] px-4 py-2 rounded-lg hover:bg-[#0f1c3d]">New Pose</button>
+        <button
+          onClick={getNewPose}
+          className="mt-3 bg-[#142654] px-4 py-2 rounded-lg hover:bg-[#0f1c3d]"
+        >
+          Yoga Asanas
+        </button>
       </div>
 
       {/* Meditation Videos */}
