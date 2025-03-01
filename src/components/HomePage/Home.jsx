@@ -16,6 +16,7 @@ const Home = () => {
         </Link>
         <Link to="/studentProfile">
           <button className="px-4 py-2 bg-green-500 text-white rounded">StudentDashboard</button>
+          </Link>
         <Link to="/dailyYogaChallenge">
           <button className="px-4 py-2 bg-green-500 text-white rounded">dailyYogaChallenge</button>
         </Link>
