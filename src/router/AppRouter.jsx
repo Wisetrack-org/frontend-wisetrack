@@ -1,19 +1,3 @@
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Schedule from "../components/StudentDashboard/Schedule.jsx";
-
-// function AppRouter() {
-//   return (
-//     <Router>
-//       <Routes>
-//       <Route path="/schedule" element={<Schedule />} />
-//       </Routes>
-//     </Router>
-//   );
-// }
-
-// export default AppRouter;
-
-
 import { createBrowserRouter } from "react-router-dom";
 import Schedule from "../components/StudentDashboard/Schedule.jsx";
 import SignUpPage from "../components/Signup/SignUpPage.jsx";
