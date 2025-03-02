@@ -71,7 +71,7 @@ const ProtectedContent = () => {
     <div>
     <h1>Protected Content</h1>
     <p>Welcome, {userData?.first_name} {userData?.last_name}!</p>
-    <button onClick={handleLogout}>Logout</button>
+    <button onClick={handleLogout} className="bg-[#1e3a8a] hover:bg-[#142654] py-3 px-6 rounded-2xl text-white mt-4">Logout</button>
   </div>
   );
 };
