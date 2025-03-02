@@ -1,9 +1,11 @@
+import { BASE_URL } from "../constants/constants";
+
 export const signin = async (data, login, setError) => {
     setError("");
   
     try {
       const response = await fetch(
-        "https://nodebackend-wisetrack-production.up.railway.app/api/studentSignin",
+        `${BASE_URL}/api/studentSignin`,
         {
           method: "POST",
           headers: {
@@ -34,4 +36,32 @@ export const signin = async (data, login, setError) => {
       setError("An error occurred during signin");
     }
   };
+
+  export const signup = async (formData) => {
+    try {
+      const response = await fetch(
+        `${BASE_URL}/api/studentSignup`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Successful: ", data);
+      } else {
+        const text = await response.json();
+        console.error("Non-JSON response:", text);
+        alert("Signup failed: User with this email already exists");
+      }
+    } catch (error) {
+      console.error("Error during signup:", error);
+      alert("An error occurred during signup.");
+    }
+  }
   

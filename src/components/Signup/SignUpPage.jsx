@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { signup } from "../api/auth";
 
 export default function SignUpPage() {
   const [formData, setFormData] = useState({
@@ -21,32 +22,7 @@ export default function SignUpPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch(
-        "https://nodebackend-wisetrack-production.up.railway.app/api/studentSignup",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      if (response.ok) {
-        // navigate("/sign-in");
-        const data = await response.json();
-        console.log("Successful: ", data);
-      } else {
-        const text = await response.json();
-        console.error("Non-JSON response:", text);
-        alert("Signup failed: User with this email already exists");
-      }
-    } catch (error) {
-      console.error("Error during signup:", error);
-      alert("An error occurred during signup.");
-    }
+    signup(formData) ? navigate("/login") : navigate("/")
   };
 
   return (
