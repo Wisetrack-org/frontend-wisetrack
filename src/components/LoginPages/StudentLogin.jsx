@@ -88,7 +88,7 @@ const StudentLogin = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#0a0a1a] text-white px-6">
-      <div className="bg-[#1e3a8a] p-6 rounded-2xl shadow-md w-full max-w-md text-center">
+      <div className="p-6 rounded-2xl shadow-md w-full max-w-md text-center">
         <FaUserGraduate className="text-5xl mx-auto mb-4" />
         <h2 className="text-3xl font-bold mb-4">Student Login</h2>
 

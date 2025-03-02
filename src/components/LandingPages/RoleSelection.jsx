@@ -6,7 +6,7 @@ const roles = [
   { name: "Student", icon: <FaUserGraduate />, route: "/studentLogin", color: "bg-blue-700" },
   { name: "Faculty", icon: <FaChalkboardTeacher />, route: "/facultyLogin", color: "bg-green-700" },
   { name: "Parent", icon: <FaUserTie />, route: "/parentLogin", color: "bg-yellow-700" },
-  { name: "Admin (University)", icon: <FaUniversity />, route: "/adminLogin", color: "bg-red-700" },
+  { name: "Admin", icon: <FaUniversity />, route: "/adminLogin", color: "bg-red-700" },
 ];
 
 const SelectCategory = () => {

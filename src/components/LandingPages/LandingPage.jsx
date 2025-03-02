@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Homepage = () => {
   const [fadeIn, setFadeIn] = useState(false);
-  const navigate = useNavigate(); // Initialize navigation
+  const navigate = useNavigate();
 
   useEffect(() => {
     setFadeIn(true);
@@ -55,7 +55,7 @@ const Homepage = () => {
         className="absolute bottom-12"
       >
         <button 
-          onClick={() => navigate("/roleSelection")} // Navigate to Role Selection
+          onClick={() => navigate("/roleSelection")}
           className="bg-[#1e3a8a] hover:bg-[#142654] text-white font-bold py-3 px-6 rounded-2xl text-lg transition-all duration-300"
         >
           Get Started
