@@ -11,6 +11,7 @@ export default function SignUpPage() {
     date_of_birth: "",
     enrollment_date: "",
     university_id: 1,
+    class_id: "",
   });
 
   const navigate = useNavigate();
@@ -21,8 +22,12 @@ export default function SignUpPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    signup(formData) ? navigate("/login") : navigate("/")
+    try {
+      const success = await signup(formData);
+      navigate(success ? "/login" : "/");
+    } catch (error) {
+      console.error("Signup failed", error);
+    }
   };
 
   return (
@@ -90,6 +95,14 @@ export default function SignUpPage() {
             onChange={handleChange}
             className="w-full p-2 border rounded-lg"
             required
+          />
+          <input
+            type="number"
+            name="class_id"
+            placeholder="Class ID (Optional)"
+            value={formData.class_id}
+            onChange={handleChange}
+            className="w-full p-2 border rounded-lg"
           />
           <button
             type="submit"
