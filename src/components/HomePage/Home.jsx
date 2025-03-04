@@ -63,7 +63,12 @@ const Home = () => {
         <Link to="/counsellorPage">
           <button className="w-full px-4 py-2 bg-green-500 text-white rounded">CounsellorPage </button>
         </Link>
-
+        <Link to="/studentNotesViewer">
+          <button className="w-full px-4 py-2 bg-green-500 text-white rounded">StudentNotesViewer</button>
+        </Link>
+        <Link to="/teacherNotesUploader">
+          <button className="w-full px-4 py-2 bg-green-500 text-white rounded">TeacherNotesUploader </button>
+        </Link>
        
       </div>
     </div>
