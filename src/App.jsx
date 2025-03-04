@@ -42,6 +42,8 @@ import PuzzleQuest from "./components/StudentDashboard/Gamification/PuzzleQuest.
 import RiddlesFun from "./components/StudentDashboard/Gamification/RiddlesFun.jsx"
 import SpeedTest from "./components/StudentDashboard/Gamification/SpeedTest.jsx"
 import CounsellorPage from './components/StudentDashboard/ConsellorPage.jsx';
+import StudentNotesViewer from "./components/StudentDashboard/StudentNotesViewer";
+import TeacherNotesUploader from "./components/TeacherDashboard/TeacherNotesUploader";
 
 function App() {
   return (
@@ -77,6 +79,8 @@ function App() {
           <Route path="/riddlesFun" element={<RiddlesFun />} />
           <Route path="/speedTest" element={<SpeedTest />} />
           <Route path="/counsellorPage" element={<CounsellorPage />} />
+          <Route path="/studentNotesViewer" element={<StudentNotesViewer />} />
+          <Route path="/teacherNotesUploader" element={<TeacherNotesUploader />} />
 
           {/* Optional: Add a catch-all route for unknown URLs */}
           <Route path="*" element={<div>Page Not Found</div>} />
