@@ -6,15 +6,21 @@ const Signin = () => {
   const [data, setData] = useState({ email: "", password: "" });
   const { login } = useAuth();
   const [error, setError] = useState("");
+  const [role, setRole] = useState("student");
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
     setError("");
   };
 
+  const handleRoleChange = (e) => {
+    setRole(e.target.value);
+    setError("");
+};
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    signin(data, login, setError);
+    signin(data, role, login, setError);
   };
 
   return (
@@ -41,6 +47,20 @@ const Signin = () => {
             className="w-full p-2 border rounded-lg"
             required
           />
+          <div>
+            <label htmlFor="role">Select Role:</label>
+            <select
+              id="role"
+              name="role"
+              value={role}
+              onChange={handleRoleChange}
+              className="w-full p-2 border rounded-lg"
+            >
+              <option value="student">Student</option>
+              <option value="teacher">Teacher</option>
+              <option value="university">University</option>
+            </select>
+          </div>
           <button
             type="submit"
             className="w-full bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition"

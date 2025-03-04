@@ -19,8 +19,8 @@ export const AuthProvider = ({ children }) => {
         navigate("/studentProfile");
     } else if (data.role === "teacher") {
         navigate("/teacherDashboard");
-    } else if (data.role === "admin") {
-        navigate("/adminDashboard");
+    } else if (data.role === "university") {
+        navigate("/universityDashboard");
     } else {
         navigate("/landingPage");
     }

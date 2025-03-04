@@ -12,6 +12,7 @@ export default function SignUpPage() {
     enrollment_date: "",
     university_id: 1,
     class_id: "",
+    semester: ""
   });
 
   const navigate = useNavigate();
@@ -101,6 +102,14 @@ export default function SignUpPage() {
             name="class_id"
             placeholder="Class ID (Optional)"
             value={formData.class_id}
+            onChange={handleChange}
+            className="w-full p-2 border rounded-lg"
+          />
+          <input
+            type="number"
+            name="semester"
+            placeholder="Semester"
+            value={formData.semester}
             onChange={handleChange}
             className="w-full p-2 border rounded-lg"
           />

@@ -1,11 +1,22 @@
 import { BASE_URL } from "../constants/constants";
 
-export const signin = async (data, login, setError) => {
+export const signin = async (data, role, login, setError) => {
     setError("");
   
     try {
+      const apiEndpoint = 
+            role === "student" ? `${BASE_URL}/api/studentSignin` :
+            role === "teacher" ? `${BASE_URL}/api/teacherSignin` :
+            role === "university" ? `${BASE_URL}/api/universitySignin` :
+            null;
+
+        if (!apiEndpoint) {
+            throw new Error("Invalid role selected");
+        }
+
+
       const response = await fetch(
-        `${BASE_URL}/api/studentSignin`,
+        apiEndpoint,
         {
           method: "POST",
           headers: {
@@ -25,7 +36,7 @@ export const signin = async (data, login, setError) => {
                  .find(row => row.startsWith('Authorization='))
                  ?.split('=')[1]
         };
-        await login({ user, role: "student" });
+        await login({ user, role });
       } else {
         const errorData = await response.json();
         console.error("Error:", errorData);
