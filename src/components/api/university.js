@@ -14,8 +14,9 @@ export const useUserData = (user, logout, navigate) => {
 
     const fetchUserData = async () => {
       try {
+        console.log("Fetching user data with token:", user.token);
         const response = await fetch(
-          `https://nodebackend-wisetrack-production.up.railway.app/api/university/universityDashboard`,
+          `${BASE_URL}/api/university/universityDashboard`,
           {
             credentials: "include",
             headers: {
@@ -24,6 +25,12 @@ export const useUserData = (user, logout, navigate) => {
             },
           }
         );
+
+        console.log("User token:", user?.token);
+
+
+        console.log("response: ", response);
+        
 
         if (response.ok) {
           const responseData = await response.json();

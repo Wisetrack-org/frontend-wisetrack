@@ -27,6 +27,7 @@ export const AuthProvider = ({ children }) => {
 };
 
   const logout = () => {
+    console.log("Logging out... Clearing user data.");
     setUser(null);
     navigate("/", { replace: true });
   };

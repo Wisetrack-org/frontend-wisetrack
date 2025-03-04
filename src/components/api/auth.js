@@ -2,7 +2,7 @@ import { BASE_URL } from "../constants/constants";
 
 export const signin = async (data, role, login, setError) => {
     setError("");
-  
+    console.log("Login data before storing:", data);
     try {
       const apiEndpoint = 
             role === "student" ? `${BASE_URL}/api/studentSignin` :
