@@ -13,15 +13,20 @@ const Home = () => {
         <Link to="/signup">
           <button className="w-full px-4 py-2 bg-blue-500 text-white rounded">Sign Up</button>
         </Link>
+        <Link to="/mainStudentPage">
+          <button className="w-full px-4 py-2 bg-green-500 text-white rounded">Main Student Page</button>
+        </Link>
+        <Link to="/teacherMainDashboard">
+          <button className="w-full px-4 py-2 bg-green-500 text-white rounded">teacher Main Dashboard</button>
+        </Link>
+        <Link to="/parentDashboard">
+          <button className="w-full px-4 py-2 bg-green-500 text-white rounded">parent Dashboard</button>
+        </Link>
         <Link to="/schedule">
           <button className="w-full px-4 py-2 bg-green-500 text-white rounded">Student Dashboard</button>
         </Link>
-
         <Link to="/yogaMeditation">
           <button className="w-full px-4 py-2 bg-green-500 text-white rounded">Yoga & Meditation</button>
-        </Link>
-        <Link to="/mainStudentPage">
-          <button className="w-full px-4 py-2 bg-green-500 text-white rounded">Main Student Page</button>
         </Link>
         <Link to="/parentLogin">
           <button className="w-full px-4 py-2 bg-green-500 text-white rounded">Parent Login</button>
@@ -44,7 +49,6 @@ const Home = () => {
         <Link to="/yogaMeditation">
           <button className="w-full px-4 py-2 bg-green-500 text-white rounded">yoga & Meditation</button>
         </Link>
-
         <Link to="/additionalCourses">
           <button className="w-full px-4 py-2 bg-green-500 text-white rounded">additional Courses</button>
         </Link>
@@ -69,6 +73,22 @@ const Home = () => {
         <Link to="/teacherNotesUploader">
           <button className="w-full px-4 py-2 bg-green-500 text-white rounded">TeacherNotesUploader </button>
         </Link>
+        <Link to="/studentComplaintBox">
+          <button className="w-full px-4 py-2 bg-green-500 text-white rounded">student Complaint Box</button>
+        </Link>
+        <Link to="/universityComplaints">
+          <button className="w-full px-4 py-2 bg-green-500 text-white rounded">university Complaints </button>
+        </Link>
+        <Link to="/studentQnA">
+          <button className="w-full px-4 py-2 bg-green-500 text-white rounded">Q&A student </button>
+        </Link>
+        <Link to="/facultyQnA">
+          <button className="w-full px-4 py-2 bg-green-500 text-white rounded">Q&A Faculty </button>
+        </Link>
+        <Link to="/codingPlatform">
+          <button className="w-full px-4 py-2 bg-green-500 text-white rounded">Coding Platform </button>
+        </Link>
+       
        
       </div>
     </div>

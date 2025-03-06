@@ -76,10 +76,14 @@
 
 import { useState } from "react";
 import { FaUserGraduate } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 
 const StudentLogin = () => {
   const [rollNumber, setRollNumber] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -112,6 +116,8 @@ const StudentLogin = () => {
           <button
             type="submit"
             className="w-full bg-blue-700 hover:bg-blue-900 text-white font-bold py-3 rounded-lg transition-all"
+            onClick={() => navigate("/mainStudentPage")}
+
           >
             Login as Student
           </button>

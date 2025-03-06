@@ -1,3 +1,5 @@
+
+
 // import { useState, useEffect } from "react";
 // import { motion } from "framer-motion";
 // import { FaPlus, FaTrash, FaEdit, FaCheck } from "react-icons/fa";
@@ -8,11 +10,13 @@
 //   const [editingTask, setEditingTask] = useState(null);
 //   const [priority, setPriority] = useState("Medium");
 
+//   // Load tasks from local storage when component mounts
 //   useEffect(() => {
 //     const savedTasks = JSON.parse(localStorage.getItem("tasks"));
 //     if (savedTasks) setTasks(savedTasks);
 //   }, []);
 
+//   // Save tasks to local storage whenever they change
 //   useEffect(() => {
 //     localStorage.setItem("tasks", JSON.stringify(tasks));
 //   }, [tasks]);
@@ -52,20 +56,21 @@
 //   };
 
 //   return (
-//     <div className="max-w-lg mx-auto p-6 bg-black text-white rounded-2xl shadow-lg border border-gray-700">
-//       <h2 className="text-2xl font-bold text-center mb-4">📝 Student To-Do List</h2>
+//     <div className="max-w-lg mx-auto p-4 sm:p-6 bg-black text-white rounded-2xl shadow-lg border border-gray-700">
+//       <h2 className="text-xl sm:text-2xl font-bold text-center mb-4">📝 Student To-Do List</h2>
 
-//       <div className="flex flex-col sm:flex-row items-center gap-2">
+//       {/* Input + Priority Selection */}
+//       <div className="flex flex-col sm:flex-row items-center gap-3">
 //         <input
 //           type="text"
 //           placeholder="Add a new task..."
-//           className="w-full p-2 rounded-lg bg-[#1e3a8a] text-white border border-gray-500 focus:outline-none"
+//           className="w-full p-3 rounded-lg bg-[#1e3a8a] text-white border border-gray-500 focus:outline-none text-sm sm:text-base"
 //           value={newTask}
 //           onChange={(e) => setNewTask(e.target.value)}
 //         />
 
 //         <select
-//           className="p-2 rounded-lg bg-[#1e3a8a] text-white border border-gray-500"
+//           className="p-3 rounded-lg bg-[#1e3a8a] text-white border border-gray-500 text-sm sm:text-base"
 //           value={priority}
 //           onChange={(e) => setPriority(e.target.value)}
 //         >
@@ -76,12 +81,13 @@
 
 //         <button
 //           onClick={addTask}
-//           className="p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg"
+//           className="p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm sm:text-base"
 //         >
 //           {editingTask !== null ? <FaEdit /> : <FaPlus />}
 //         </button>
 //       </div>
 
+//       {/* Task List */}
 //       <ul className="mt-4 space-y-3">
 //         {tasks.length === 0 ? (
 //           <p className="text-gray-400 text-center">No tasks added yet.</p>
@@ -96,7 +102,7 @@
 //                 task.completed ? "bg-gray-600 line-through" : "bg-[#1e3a8a]"
 //               }`}
 //             >
-//               <span className="flex-1">{task.text}</span>
+//               <span className="flex-1 text-sm sm:text-base">{task.text}</span>
 //               <span
 //                 className={`text-xs px-2 py-1 rounded ${
 //                   task.priority === "High"
@@ -111,19 +117,19 @@
 //               <div className="flex gap-2">
 //                 <button
 //                   onClick={() => toggleComplete(index)}
-//                   className="text-green-400 hover:text-green-300"
+//                   className="text-green-400 hover:text-green-300 text-sm sm:text-base"
 //                 >
 //                   <FaCheck />
 //                 </button>
 //                 <button
 //                   onClick={() => editTask(index)}
-//                   className="text-yellow-400 hover:text-yellow-300"
+//                   className="text-yellow-400 hover:text-yellow-300 text-sm sm:text-base"
 //                 >
 //                   <FaEdit />
 //                 </button>
 //                 <button
 //                   onClick={() => deleteTask(index)}
-//                   className="text-red-400 hover:text-red-300"
+//                   className="text-red-400 hover:text-red-300 text-sm sm:text-base"
 //                 >
 //                   <FaTrash />
 //                 </button>
@@ -139,9 +145,11 @@
 // export default TodoList;
 
 
+
+
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaPlus, FaTrash, FaEdit, FaCheck } from "react-icons/fa";
+import { FaPlus, FaTrash, FaEdit, FaCheck, FaExclamationCircle, FaBolt, FaCheckCircle } from "react-icons/fa";
 
 const TodoList = () => {
   const [tasks, setTasks] = useState([]);
@@ -149,13 +157,11 @@ const TodoList = () => {
   const [editingTask, setEditingTask] = useState(null);
   const [priority, setPriority] = useState("Medium");
 
-  // Load tasks from local storage when component mounts
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem("tasks"));
     if (savedTasks) setTasks(savedTasks);
   }, []);
 
-  // Save tasks to local storage whenever they change
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
@@ -196,9 +202,8 @@ const TodoList = () => {
 
   return (
     <div className="max-w-lg mx-auto p-4 sm:p-6 bg-black text-white rounded-2xl shadow-lg border border-gray-700">
-      <h2 className="text-xl sm:text-2xl font-bold text-center mb-4">📝 Student To-Do List</h2>
+      <h2 className="text-xl sm:text-2xl font-bold text-center mb-4">Student To-Do List</h2>
 
-      {/* Input + Priority Selection */}
       <div className="flex flex-col sm:flex-row items-center gap-3">
         <input
           type="text"
@@ -213,9 +218,9 @@ const TodoList = () => {
           value={priority}
           onChange={(e) => setPriority(e.target.value)}
         >
-          <option value="High">🔥 High</option>
-          <option value="Medium">⚡ Medium</option>
-          <option value="Low">✅ Low</option>
+          <option value="High"> <FaExclamationCircle /> High</option>
+          <option value="Medium"> <FaBolt /> Medium</option>
+          <option value="Low"> <FaCheckCircle /> Low</option>
         </select>
 
         <button
@@ -226,7 +231,6 @@ const TodoList = () => {
         </button>
       </div>
 
-      {/* Task List */}
       <ul className="mt-4 space-y-3">
         {tasks.length === 0 ? (
           <p className="text-gray-400 text-center">No tasks added yet.</p>
@@ -253,7 +257,7 @@ const TodoList = () => {
               >
                 {task.priority}
               </span>
-              <div className="flex gap-2">
+              <div className="flex gap-2 ml-4">
                 <button
                   onClick={() => toggleComplete(index)}
                   className="text-green-400 hover:text-green-300 text-sm sm:text-base"

@@ -9,10 +9,8 @@
 
 
 
-
 import React from 'react';
 import MainLayout from "./components/MainLayout";
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Schedule from "./components/StudentDashboard/Schedule.jsx";
 import SignUpPage from "./components/Signup/SignUpPage.jsx";
@@ -44,14 +42,34 @@ import SpeedTest from "./components/StudentDashboard/Gamification/SpeedTest.jsx"
 import CounsellorPage from './components/StudentDashboard/ConsellorPage.jsx';
 import StudentNotesViewer from "./components/StudentDashboard/StudentNotesViewer";
 import TeacherNotesUploader from "./components/TeacherDashboard/TeacherNotesUploader";
+import StudentComplaintBox from './components/StudentDashboard/StudentComplaintBox.jsx';
+import UniversityComplaints from './components/UniversityDashboard/UniversityComplaints.jsx';
+import StudentQnA from './components/StudentDashboard/StudentQnA.jsx';
+import FacultyQnA from './components/TeacherDashboard/FacultyQnA.jsx';
+import CodingPlatform from './components/StudentDashboard/CodingPlatform.jsx';
+import TeacherMainDashboard from './components/TeacherDashboard/TeacherMainDashboard.jsx';
+import MilestoneTracker from './components/StudentDashboard/MilestoneTracker.jsx'
+import ParentDashboard from './components/ParentDashboard/ParentMainDashboard.jsx';
+import Motivation from './components/StudentDashboard/Motivation/Motivation.jsx';
+import AssignmentUpload from './components/TeacherDashboard/AssignmentUploads.jsx';
+import AssignmentViewer from './components/StudentDashboard/AssignmentViewer.jsx';
+import SkillDevlopment from './components/StudentDashboard/SkillDevlopment.jsx'
+import CarrerGoalModule from './components/StudentDashboard/CarrerGoalModule.jsx'
+import Defaulter from "./components/TeacherDashboard/Defaulter.jsx";
+import DailyQuote from "./components/StudentDashboard/Motivation/DailyQuiote.jsx"
+import MotivationVideo from "./components/StudentDashboard/Motivation/MotivationVideo.jsx"
+import Podcast from "./components/StudentDashboard/Motivation/Podcast.jsx"
+import Productivity from "./components/StudentDashboard/Motivation/Productivity.jsx"
+import AssignmentUploadValidator from './components/AssignmentUploader.jsx'
+import AssignmentViewerValidator from './components/AssignmentViewer.jsx'
 
 function App() {
   return (
     <BrowserRouter>
       <MainLayout>
-
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/landingPage" element={<LandingPage />} />
@@ -81,6 +99,26 @@ function App() {
           <Route path="/counsellorPage" element={<CounsellorPage />} />
           <Route path="/studentNotesViewer" element={<StudentNotesViewer />} />
           <Route path="/teacherNotesUploader" element={<TeacherNotesUploader />} />
+          <Route path="/studentComplaintBox" element={<StudentComplaintBox />} />
+          <Route path="/universityComplaints" element={<UniversityComplaints />} />
+          <Route path="/studentQnA" element={<StudentQnA />} />
+          <Route path="/facultyQnA" element={<FacultyQnA />} />
+          <Route path="/codingPlatform" element={<CodingPlatform />} />
+          <Route path="/teacherMainDashboard" element={<TeacherMainDashboard />} />
+          <Route path="/milestoneTracker" element={<MilestoneTracker />} />
+          <Route path="/parentDashboard" element={<ParentDashboard />} />
+          <Route path="/motivation" element={<Motivation />} />
+          <Route path="/assignmentUpload" element={<AssignmentUpload />} />
+          <Route path="/assignmentViewer" element={<AssignmentViewer />} />
+          <Route path="/skillDevlopment" element={<SkillDevlopment />} />
+          <Route path="/carrerGoalModule" element={<CarrerGoalModule />} />
+          <Route path="/defaulter" element={<Defaulter />} />
+          <Route path="/dailyQuote" element={<DailyQuote />} />
+          <Route path="/motivationVideo" element={<MotivationVideo />} />
+          <Route path="/podcast" element={<Podcast />} />
+          <Route path="/productivity" element={<Productivity />} />
+          <Route path="/assignmentUploadValidator" element={<AssignmentUploadValidator />} />
+          <Route path="/assignmentViewerValidator" element={<AssignmentViewerValidator />} />
 
           {/* Optional: Add a catch-all route for unknown URLs */}
           <Route path="*" element={<div>Page Not Found</div>} />

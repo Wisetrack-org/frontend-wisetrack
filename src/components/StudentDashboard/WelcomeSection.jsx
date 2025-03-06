@@ -11,7 +11,7 @@ const WelcomeSection = ({ studentName }) => {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
-      className="max-w-2xl mx-auto p-6 bg-gradient-to-br from-black to-[#1e3a8a] text-white rounded-2xl shadow-lg text-center border m-5 border-gray-700"
+      className="max-w-2xl mx-auto p-6 bg-blue-900 text-white shadow-lg text-center border m-5 border-gray-700"
     >
       <div className="flex gap-3">
         <FaUser className="text-3xl text-gray-300" />

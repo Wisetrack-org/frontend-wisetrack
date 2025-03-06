@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { FaUniversity } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -36,6 +40,7 @@ const AdminLogin = () => {
           <button
             type="submit"
             className="w-full bg-red-800 hover:bg-red-900 text-white font-bold py-3 rounded-lg transition-all"
+            onClick={() => navigate("/universityMainDashboard")}
           >
             Login as Admin
           </button>

@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { FaChalkboardTeacher } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const FacultyLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -36,6 +39,8 @@ const FacultyLogin = () => {
           <button
             type="submit"
             className="w-full bg-green-800 hover:bg-green-900 text-white font-bold py-3 rounded-lg transition-all"
+            onClick={() => navigate("/teacherMainDashboard")}
+
           >
             Login as Faculty
           </button>
