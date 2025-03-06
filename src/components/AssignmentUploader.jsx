@@ -1,41 +1,47 @@
-import { useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 
 const AssignmentUploader = () => {
   const [file, setFile] = useState(null);
-  const [message, setMessage] = useState("");
 
-  const handleUpload = async (e) => {
-    e.preventDefault();
-    if (!file) return alert("Please select a file!");
+  const handleFileChange = (event) => {
+    setFile(event.target.files[0]);
+  };
+
+  const handleUpload = async () => {
+    if (!file) {
+      alert("Please select a file first!");
+      return;
+    }
 
     const formData = new FormData();
-    formData.append("assignment", file);
+    formData.append("file", file);
 
     try {
-      const res = await axios.post("http://localhost:5000/upload", formData);
-      setMessage(res.data.message);
-    } catch (err) {
-      setMessage("Upload failed. Try again.");
+      const response = await fetch("http://localhost:5000/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        alert("File uploaded successfully: " + data.file);
+      } else {
+        alert("Upload failed: " + data.message);
+      }
+    } catch (error) {
+      console.error("Error uploading file:", error);
     }
   };
 
   return (
-    <div className="p-6 bg-black text-white min-h-screen flex flex-col items-center">
-      <h1 className="text-2xl font-bold mb-4">Upload Assignment</h1>
-      <input
-        type="file"
-        accept="application/pdf"
-        className="mb-4"
-        onChange={(e) => setFile(e.target.files[0])}
-      />
+    <div className="p-6 bg-gray-800 rounded-lg text-white">
+      <input type="file" onChange={handleFileChange} className="mb-4" />
       <button
         onClick={handleUpload}
-        className="bg-blue-600 px-4 py-2 rounded-lg"
+        className="bg-blue-500 px-4 py-2 rounded text-white"
       >
-        Upload
+        Upload Assignment
       </button>
-      {message && <p className="mt-4">{message}</p>}
     </div>
   );
 };

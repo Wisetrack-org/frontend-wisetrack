@@ -62,6 +62,7 @@ import Podcast from "./components/StudentDashboard/Motivation/Podcast.jsx"
 import Productivity from "./components/StudentDashboard/Motivation/Productivity.jsx"
 import AssignmentUploadValidator from './components/AssignmentUploader.jsx'
 import AssignmentViewerValidator from './components/AssignmentViewer.jsx'
+import UniversityDashboard from './components/UniversityDashboard/UniversityMainDashboard.jsx';
 
 function App() {
   return (
@@ -119,6 +120,7 @@ function App() {
           <Route path="/productivity" element={<Productivity />} />
           <Route path="/assignmentUploadValidator" element={<AssignmentUploadValidator />} />
           <Route path="/assignmentViewerValidator" element={<AssignmentViewerValidator />} />
+          <Route path="/universityDashboard" element={<UniversityDashboard />} />
 
           {/* Optional: Add a catch-all route for unknown URLs */}
           <Route path="*" element={<div>Page Not Found</div>} />

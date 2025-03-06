@@ -40,7 +40,7 @@ const AdminLogin = () => {
           <button
             type="submit"
             className="w-full bg-red-800 hover:bg-red-900 text-white font-bold py-3 rounded-lg transition-all"
-            onClick={() => navigate("/universityMainDashboard")}
+            onClick={() => navigate("/UniversityDashboard")}
           >
             Login as Admin
           </button>
