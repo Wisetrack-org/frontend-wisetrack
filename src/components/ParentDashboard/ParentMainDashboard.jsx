@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Calendar, BarChart, UserCheck, GraduationCap, Clock, FileText, HelpCircle } from "lucide-react";
 
 const ParentDashboard = () => {
   const navigate = useNavigate();
@@ -8,74 +9,58 @@ const ParentDashboard = () => {
   return (
     <div className="bg-black text-white min-h-screen flex flex-col">
       {/* Navbar */}
-      <div className="flex justify-between bg-blue-700 items-center p-3 border-b border-gray-700">
+      <div className="flex justify-between bg-blue-700 items-center p-4 shadow-lg">
         <h1 className="text-xl font-bold">Parent Dashboard</h1>
         <div className="w-10 h-10 bg-gray-400 rounded-full"></div>
       </div>
 
-      <div className="px-5 py-6 flex-grow">
-
-
+      <div className="px-6 py-6 flex-grow">
         {/* Sections */}
         {activeSection === 1 && (
-          <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 gap-6">
             <div
-              className="bg-blue-700 p-4 rounded-lg text-center cursor-pointer"
+              className="bg-blue-700 p-5 rounded-lg text-center cursor-pointer flex items-center gap-3 transition hover:bg-blue-800"
               onClick={() => navigate("/attendance")}
             >
-              Attendance of Student
+              <UserCheck size={24} /> <span>Attendance of Student</span>
             </div>
             <div
-              className="bg-purple-700 p-4 rounded-lg text-center cursor-pointer"
-              onClick={() => navigate("/exam-timetable")}
+              className="bg-purple-700 p-5 rounded-lg text-center cursor-pointer flex items-center gap-3 transition hover:bg-purple-800"
+              onClick={() => navigate("/timetableView")}
             >
-              Exams Timetable
+              <Calendar size={24} /> <span>Exams Timetable</span>
             </div>
             <div
-              className="bg-green-700 p-4 rounded-lg text-center cursor-pointer"
+              className="bg-green-700 p-5 rounded-lg text-center cursor-pointer flex items-center gap-3 transition hover:bg-green-800"
               onClick={() => navigate("/student-progress")}
             >
-              Student Progress
+              <BarChart size={24} /> <span>Student Progress</span>
             </div>
-          </div>
-        )}
-
-        {activeSection === 2 && (
-          <div className="grid grid-cols-1 gap-4">
             <div
-              className="bg-orange-700 p-4 rounded-lg text-center cursor-pointer"
-              onClick={() => navigate("/university-counsellor")}
+              className="bg-orange-700 p-5 rounded-lg text-center cursor-pointer flex items-center gap-3 transition hover:bg-orange-800"
+              onClick={() => navigate("/counsellorPage")}
             >
-              University Counsellor
+              <HelpCircle size={24} /> <span>University Counsellor</span>
             </div>
             <div
-              className="bg-pink-700 p-4 rounded-lg text-center cursor-pointer"
-              onClick={() => navigate("/weekly-test-marks")}
+              className="bg-pink-700 p-5 rounded-lg text-center cursor-pointer flex items-center gap-3 transition hover:bg-pink-800"
+              onClick={() => navigate("/weeklyTestMarksS")}
             >
-              Weekly Test Marks
+              <FileText size={24} /> <span>Weekly Test Marks</span>
             </div>
             <div
-              className="bg-gray-700 p-4 rounded-lg text-center cursor-pointer"
+              className="bg-gray-700 p-5 rounded-lg text-center cursor-pointer flex items-center gap-3 transition hover:bg-gray-800"
               onClick={() => navigate("/results")}
             >
-              Results
+              <GraduationCap size={24} /> <span>Results</span>
             </div>
           </div>
         )}
+
+
       </div>
 
-      {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 w-full bg-black py-4 flex justify-center gap-6 border-t-4 border-blue-600 z-50">
-        {[1, 2].map((num) => (
-          <div
-            key={num}
-            className={`w-5 h-5 rounded-full cursor-pointer transition duration-300 ${
-              activeSection === num ? "bg-blue-600 scale-110" : "bg-gray-600"
-            }`}
-            onClick={() => setActiveSection(num)}
-          ></div>
-        ))}
-      </div>
+
     </div>
   );
 };
