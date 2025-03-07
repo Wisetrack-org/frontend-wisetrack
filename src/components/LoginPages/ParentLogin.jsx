@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { FaUserTie } from "react-icons/fa";
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
 
+=======
+>>>>>>> 90a23bc9cab568cfa37e6fd888eb060975f10e72
 
 const ParentLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+<<<<<<< HEAD
   const navigate = useNavigate();
 
+=======
+>>>>>>> 90a23bc9cab568cfa37e6fd888eb060975f10e72
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -40,8 +46,11 @@ const ParentLogin = () => {
           <button
             type="submit"
             className="w-full bg-yellow-800 hover:bg-yellow-900 text-white font-bold py-3 rounded-lg transition-all"
+<<<<<<< HEAD
             onClick={() => navigate("/parentDashboard")}
 
+=======
+>>>>>>> 90a23bc9cab568cfa37e6fd888eb060975f10e72
           >
             Login as Parent
           </button>

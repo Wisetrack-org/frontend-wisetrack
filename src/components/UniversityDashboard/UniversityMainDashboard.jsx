@@ -47,6 +47,8 @@
 
 import { useNavigate } from "react-router-dom";
 import { Users, GraduationCap, ClipboardList, MailWarning, CalendarDays, Building } from "lucide-react";
+import { useAuth } from "../hooks/useAuth";
+import { useUserData } from "../api/university";
 
 const UniversityDashboard = () => {
   const navigate = useNavigate();
@@ -59,9 +61,29 @@ const UniversityDashboard = () => {
     { name: "Exam Timetable", path: "/universityTimeTable", bgColor: "bg-purple-500", icon: <CalendarDays size={32} /> },
     { name: "Annocement Box", path: "/postAnnouncement", bgColor: "bg-pink-500", icon: <CalendarDays size={32} /> },
   ];
+  const { user, logout } = useAuth();
+   const { userData, loading, error } = useUserData(user, logout, navigate);
 
+  const handleLogout = () => {
+    logout();
+    navigate("/signin");
+  };
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!userData) return <div>No university data available.</div>;
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white font-sans">
+      <div>
+      <h1>University Dashboard</h1>
+      <p>Welcome, {userData?.university_name}!</p>
+      <button 
+        onClick={handleLogout} 
+        className="bg-[#1e3a8a] hover:bg-[#142654] py-3 px-6 rounded-2xl text-white mt-4"
+      >
+        Logout
+      </button>
+    </div>
       {/* Navbar */}
       <nav className="bg-blue-800 p-4 flex justify-between items-center shadow-md">
         <h1 className="text-2xl font-bold tracking-wide">University Dashboard</h1>
@@ -93,3 +115,36 @@ const UniversityDashboard = () => {
 };
 
 export default UniversityDashboard;
+// import { useNavigate } from "react-router-dom";
+// import { useAuth } from "../hooks/useAuth";
+// import { useUserData } from "../api/university";
+
+// const UniversityMainDashboard = () => {
+//   const { user, logout } = useAuth();
+//   const navigate = useNavigate();
+//   const { userData, loading, error } = useUserData(user, logout, navigate);
+
+//   const handleLogout = () => {
+//     logout();
+//     navigate("/signin");
+//   };
+
+//   if (loading) return <div>Loading...</div>;
+//   if (error) return <div>Error: {error}</div>;
+//   if (!userData) return <div>No university data available.</div>;
+
+//   return (
+//     <div>
+//       <h1>University Dashboard</h1>
+//       <p>Welcome, {userData?.university_name}!</p>
+//       <button 
+//         onClick={handleLogout} 
+//         className="bg-[#1e3a8a] hover:bg-[#142654] py-3 px-6 rounded-2xl text-white mt-4"
+//       >
+//         Logout
+//       </button>
+//     </div>
+//   );
+// };
+
+// export default UniversityMainDashboard;

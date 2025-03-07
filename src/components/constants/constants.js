@@ -1,0 +1,1 @@
+export const BASE_URL = "https://nodebackend-wisetrack-production.up.railway.app";
