@@ -70,6 +70,52 @@
 // export default UniversityComplaints;
 
 
+// import React, { useState, useEffect } from "react";
+
+// const UniversityComplaints = () => {
+//   const [complaints, setComplaints] = useState([]);
+
+//   // Function to load complaints from localStorage
+//   const fetchComplaints = () => {
+//     const storedComplaints = JSON.parse(localStorage.getItem("complaints")) || [];
+//     setComplaints(storedComplaints);
+//   };
+
+//   useEffect(() => {
+//     fetchComplaints(); // Load data on mount
+
+//     // Listen for localStorage updates (real-time updates)
+//     const handleStorageChange = () => fetchComplaints();
+//     window.addEventListener("storage", handleStorageChange);
+
+//     return () => {
+//       window.removeEventListener("storage", handleStorageChange);
+//     };
+//   }, []);
+
+//   return (
+//     <div className="max-w-3xl mx-auto p-6 bg-black text-white rounded-2xl shadow-lg border border-gray-700">
+//       <h2 className="text-2xl font-bold text-center mb-4 text-blue-400">📢 Student Complaints</h2>
+
+//       {complaints.length === 0 ? (
+//         <p className="text-gray-400 text-center">No complaints submitted yet.</p>
+//       ) : (
+//         <ul className="space-y-4">
+//           {complaints.map((complaint, index) => (
+//             <li key={index} className="p-4 rounded-lg bg-[#1e3a8a] border border-gray-600 shadow-md">
+//               <p className="text-lg font-semibold text-white">📝 {complaint.text || "No description provided"}</p>
+//               <p className="text-gray-300 mt-1">📅 {complaint.timestamp || "Unknown date"}</p>
+//               <p className="text-xs text-right text-gray-400 font-semibold">👤 {complaint.studentName || "Anonymous"}</p>
+//             </li>
+//           ))}
+//         </ul>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default UniversityComplaints;
+
 import React, { useState, useEffect } from "react";
 
 const UniversityComplaints = () => {
@@ -94,22 +140,24 @@ const UniversityComplaints = () => {
   }, []);
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-black text-white rounded-2xl shadow-lg border border-gray-700">
-      <h2 className="text-2xl font-bold text-center mb-4 text-blue-400">📢 Student Complaints</h2>
+    <div className="min-h-screen flex flex-col items-center  bg-gradient-to-b from-gray-900 to-black text-white p-4">
+      <div className="w-full max-w-4xl p-6 bg-[#0a192f] rounded-lg shadow-lg border border-gray-700">
+        <h2 className="text-3xl font-bold text-center mb-6 text-blue-400">📢 Student Complaints</h2>
 
-      {complaints.length === 0 ? (
-        <p className="text-gray-400 text-center">No complaints submitted yet.</p>
-      ) : (
-        <ul className="space-y-4">
-          {complaints.map((complaint, index) => (
-            <li key={index} className="p-4 rounded-lg bg-[#1e3a8a] border border-gray-600 shadow-md">
-              <p className="text-lg font-semibold text-white">📝 {complaint.text || "No description provided"}</p>
-              <p className="text-gray-300 mt-1">📅 {complaint.timestamp || "Unknown date"}</p>
-              <p className="text-xs text-right text-gray-400 font-semibold">👤 {complaint.studentName || "Anonymous"}</p>
-            </li>
-          ))}
-        </ul>
-      )}
+        {complaints.length === 0 ? (
+          <p className="text-gray-400 text-center text-lg">No complaints submitted yet.</p>
+        ) : (
+          <ul className="space-y-4">
+            {complaints.map((complaint, index) => (
+              <li key={index} className="p-4 rounded-lg bg-[#1e3a8a] border border-gray-600 shadow-md hover:scale-105 transition duration-300">
+                <p className="text-lg font-semibold text-white">📝 {complaint.text || "No description provided"}</p>
+                <p className="text-gray-300 mt-1">📅 {complaint.timestamp || "Unknown date"}</p>
+                <p className="text-xs text-right text-gray-400 font-semibold">👤 {complaint.studentName || "Anonymous"}</p>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };

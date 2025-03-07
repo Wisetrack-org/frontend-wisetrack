@@ -63,6 +63,18 @@ import Productivity from "./components/StudentDashboard/Motivation/Productivity.
 import AssignmentUploadValidator from './components/AssignmentUploader.jsx'
 import AssignmentViewerValidator from './components/AssignmentViewer.jsx'
 import UniversityDashboard from './components/UniversityDashboard/UniversityMainDashboard.jsx';
+import DropoutPredictionForm from './components/StudentDashboard/DroupoutPredictionForm.jsx';
+import UniversityTimeTable from './components/UniversityDashboard/UniversityTimeTable.jsx'
+import TimetableView from './components/StudentDashboard/TimetableView.jsx';
+import GetAnnouncement from './components/Announcement/GetAnnouncement.jsx';
+import PostAnnouncement from './components/Announcement/PostAnnouncement.jsx';
+import MarksUpload from './components/UniversityDashboard/MarksUpload.jsx';
+import MarksDashboard from './components/StudentDashboard/MarksDashboard.jsx';
+import StudentData from './components/UniversityDashboard/StudentData.jsx'
+import TeacherList from './components/UniversityDashboard/TeacherList.jsx';
+import WeeklyTestMarks from './components/TeacherDashboard/WeeklyTestMarks.jsx';
+import WeeklyTestMarksS from './components/StudentDashboard/WeeklyTestMarksS.jsx';
+import AssignmentManager from './components/StudentDashboard/AssignmentManager.jsx';
 
 function App() {
   return (
@@ -121,6 +133,18 @@ function App() {
           <Route path="/assignmentUploadValidator" element={<AssignmentUploadValidator />} />
           <Route path="/assignmentViewerValidator" element={<AssignmentViewerValidator />} />
           <Route path="/universityDashboard" element={<UniversityDashboard />} />
+          <Route path="/dropoutPredictionForm" element={<DropoutPredictionForm />} />
+          <Route path="/universityTimeTable" element={<UniversityTimeTable />} />
+          <Route path="/timetableView" element={<TimetableView />} />
+          <Route path="/getAnnouncement" element={<GetAnnouncement />} />
+          <Route path="/postAnnouncement" element={<PostAnnouncement />} />
+          <Route path="/marksUpload" element={<MarksUpload />} />
+          <Route path="/marksDashboard" element={<MarksDashboard />} />
+          <Route path="/studentData" element={<StudentData />} />
+          <Route path="/teacherList" element={<TeacherList />} />
+          <Route path="/weeklyTestMarks" element={<WeeklyTestMarks />} />
+          <Route path="/weeklyTestMarksS" element={<WeeklyTestMarksS />} />
+          <Route path="/assignmentManager" element={<AssignmentManager />} />
 
           {/* Optional: Add a catch-all route for unknown URLs */}
           <Route path="*" element={<div>Page Not Found</div>} />

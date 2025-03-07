@@ -8,6 +8,7 @@ import { FaGamepad, FaClipboardList, FaChalkboardTeacher, FaBook, FaExclamationC
 import { FaBookOpen, FaPrayingHands, FaChartLine, FaCode, FaStickyNote } from "react-icons/fa";
 import { FaCalendarAlt, FaClipboardCheck, FaTrophy, FaProjectDiagram } from "react-icons/fa";
 import { FaFlagCheckered, FaMedal, FaLightbulb, FaBriefcase } from "react-icons/fa";
+import GetAnnouncement from "../Announcement/GetAnnouncement";
 
 
 const MainStudentPage = () => {
@@ -54,10 +55,10 @@ const MainStudentPage = () => {
 
               <div
                 className="bg-gradient-to-r from-purple-900 to-purple-700 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-105 transition transform duration-300 cursor-pointer"
-                onClick={() => navigate("/takeTest")}
+                onClick={() => navigate("/dropoutPredictionForm")}
               >
                 <FaClipboardList className="text-white text-3xl mb-2" />
-                <p className="text-white font-semibold">Take Test</p>
+                <p className="text-white font-semibold">Droupout Prediction</p>
               </div>
 
               <div
@@ -73,7 +74,7 @@ const MainStudentPage = () => {
                 onClick={() => navigate("/assignments")}
               >
                 <FaBook className="text-white text-3xl mb-2" />
-                <p className="text-white font-semibold text-center">Assignment Management</p>
+                <p className="text-white font-semibold text-center">Assignment Uploading</p>
               </div>
 
               <div
@@ -116,7 +117,7 @@ const MainStudentPage = () => {
 
               <div
                 className="bg-gradient-to-r from-yellow-800 to-yellow-600 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-105 transition transform duration-300 cursor-pointer"
-                onClick={() => navigate("/weeklyMarks")}
+                onClick={() => navigate("/weeklyTestMarksS")}
               >
                 <FaChartLine className="text-white text-4xl mb-2" />
                 <p className="text-white font-semibold">Weekly Test Marks</p>
@@ -131,11 +132,19 @@ const MainStudentPage = () => {
               </div>
 
               <div
-                className="bg-gradient-to-r from-red-800 to-red-600 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-105 transition transform duration-300 cursor-pointer col-span-2"
+                className="bg-gradient-to-r from-red-800 to-red-600 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-105 transition transform duration-300 cursor-pointer"
                 onClick={() => navigate("/studentNotesViewer")}
               >
                 <FaStickyNote className="text-white text-4xl mb-2" />
                 <p className="text-white font-semibold">Notes</p>
+              </div>
+
+              <div
+                className="bg-gradient-to-r from-pink-800 to-pink-600 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-105 transition transform duration-300 cursor-pointer"
+                onClick={() => navigate("/assignmentUpload")}
+              >
+                <FaBookOpen className="text-white text-4xl mb-2" />
+                <p className="text-white font-semibold">Assignment Due Dates</p>
               </div>
             </div>
           </div>
@@ -146,44 +155,45 @@ const MainStudentPage = () => {
         {activeSection === 3 && (
           <div>
             {/* Announcement Box Header */}
-            <div className="mt-4 text-center bg-gradient-to-r from-blue-900 to-blue-700 p-4 rounded-lg shadow-lg text-xl font-semibold">
-              Announcement Box
+            <div className="mt-4 text-center font-semibold">
+              <GetAnnouncement />
+
+              {/* Section Grid */}
+              <div className="grid grid-cols-2 gap-4 mt-6">
+                <div
+                  className="bg-gradient-to-r from-purple-800 to-purple-600 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-105 transition transform duration-300 cursor-pointer"
+                  onClick={() => navigate("/timetableView")}
+                >
+                  <FaCalendarAlt className="text-white text-4xl mb-2" />
+                  <p className="text-white font-semibold text-center">Exam Timetable</p>
+                </div>
+
+                <div
+                  className="bg-gradient-to-r from-green-800 to-green-600 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-105 transition transform duration-300 cursor-pointer"
+                  onClick={() => navigate("/attendance")}
+                >
+                  <FaClipboardCheck className="text-white text-4xl mb-2" />
+                  <p className="text-white font-semibold text-center">Attendance</p>
+                </div>
+
+                <div
+                  className="bg-gradient-to-r from-yellow-800 to-yellow-600 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-105 transition transform duration-300 cursor-pointer"
+                  onClick={() => navigate("/marksDashboard")}
+                >
+                  <FaTrophy className="text-white text-4xl mb-2" />
+                  <p className="text-white font-semibold text-center">Results</p>
+                </div>
+
+                <div
+                  className="bg-gradient-to-r from-red-800 to-red-600 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-105 transition transform duration-300 cursor-pointer"
+                  onClick={() => navigate("/projects")}
+                >
+                  <FaProjectDiagram className="text-white text-4xl mb-2" />
+                  <p className="text-white font-semibold text-center">Project Topics</p>
+                </div>
+              </div>
             </div>
 
-            {/* Section Grid */}
-            <div className="grid grid-cols-2 gap-4 mt-6">
-              <div
-                className="bg-gradient-to-r from-purple-800 to-purple-600 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-105 transition transform duration-300 cursor-pointer"
-                onClick={() => navigate("/examTimetable")}
-              >
-                <FaCalendarAlt className="text-white text-4xl mb-2" />
-                <p className="text-white font-semibold text-center">Exam Timetable</p>
-              </div>
-
-              <div
-                className="bg-gradient-to-r from-green-800 to-green-600 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-105 transition transform duration-300 cursor-pointer"
-                onClick={() => navigate("/attendance")}
-              >
-                <FaClipboardCheck className="text-white text-4xl mb-2" />
-                <p className="text-white font-semibold text-center">Attendance</p>
-              </div>
-
-              <div
-                className="bg-gradient-to-r from-yellow-800 to-yellow-600 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-105 transition transform duration-300 cursor-pointer"
-                onClick={() => navigate("/results")}
-              >
-                <FaTrophy className="text-white text-4xl mb-2" />
-                <p className="text-white font-semibold text-center">Results</p>
-              </div>
-
-              <div
-                className="bg-gradient-to-r from-red-800 to-red-600 p-6 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-105 transition transform duration-300 cursor-pointer"
-                onClick={() => navigate("/projects")}
-              >
-                <FaProjectDiagram className="text-white text-4xl mb-2" />
-                <p className="text-white font-semibold text-center">Project Topics</p>
-              </div>
-            </div>
           </div>
         )}
         {/* Section 4 - Goals & Achievements */}

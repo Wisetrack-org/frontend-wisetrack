@@ -56,6 +56,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import WelcomeSection from "../StudentDashboard/WelcomeSection";
 import Schedule from "../StudentDashboard/Schedule";
+import { BookOpen, Upload, ClipboardList, MessageSquare, FileText, List, Calendar, Eye, Users, AlarmClock, Ban } from "lucide-react";
+
 
 const TeacherMainDashboard = () => {
   const navigate = useNavigate();
@@ -84,24 +86,99 @@ const TeacherMainDashboard = () => {
             </div>
 
 
-            <div className="mt-6 grid grid-cols-2 gap-3">
+            {/* <div className="mt-6 grid grid-cols-2 gap-3">
               <div className="bg-purple-700 p-4 rounded-lg text-center cursor-pointer" onClick={() => navigate("/facultyQnA")}>Q&A Handling</div>
               <div className="bg-green-700 p-4 rounded-lg text-center cursor-pointer" onClick={() => navigate("/teacherNotesUploader")}>Upload Notes</div>
               <div className="bg-yellow-700 p-4 rounded-lg text-center cursor-pointer" onClick={() => navigate("/assignmentUpload")}>Assignment Due Dates</div>
               <div className="bg-red-700 p-4 rounded-lg text-center cursor-pointer" onClick={() => navigate("/feedback-parents")}>Feedback to Parents</div>
+            </div> */}
+            <div className="mt-6 grid grid-cols-2 gap-4">
+              <div
+                className="bg-purple-700 p-4 rounded-xl text-center cursor-pointer shadow-md hover:scale-105 transition-all flex flex-col items-center justify-center"
+                onClick={() => navigate("/facultyQnA")}
+              >
+                <MessageSquare size={28} className="mb-2 text-white" />
+                <span className="text-lg font-semibold">Q&A Handling</span>
+              </div>
+
+              <div
+                className="bg-green-700 p-4 rounded-xl text-center cursor-pointer shadow-md hover:scale-105 transition-all flex flex-col items-center justify-center"
+                onClick={() => navigate("/teacherNotesUploader")}
+              >
+                <Upload size={28} className="mb-2 text-white" />
+                <span className="text-lg font-semibold">Upload Notes</span>
+              </div>
+
+              <div
+                className="bg-yellow-700 p-4 rounded-xl text-center cursor-pointer shadow-md hover:scale-105 transition-all flex flex-col items-center justify-center"
+                onClick={() => navigate("/assignmentUpload")}
+              >
+                <ClipboardList size={28} className="mb-2 text-white" />
+                <span className="text-lg font-semibold">Assignment Due Dates</span>
+              </div>
+
+              <div
+                className="bg-red-700 p-4 rounded-xl text-center cursor-pointer shadow-md hover:scale-105 transition-all flex flex-col items-center justify-center"
+                onClick={() => navigate("/feedback-parents")}
+              >
+                <FileText size={28} className="mb-2 text-white" />
+                <span className="text-lg font-semibold">Feedback to Parents</span>
+              </div>
             </div>
           </div>
         )}
 
         {activeSection === 2 && (
           <div>
+
             <div className="mt-6 grid grid-cols-2 gap-4">
-              <div className="bg-indigo-700 p-4 rounded-lg text-center cursor-pointer" onClick={() => navigate("/upload-exam-marks")}>Upload Exam Marks</div>
-              <div className="bg-teal-700 p-4 rounded-lg text-center cursor-pointer" onClick={() => navigate("/upload-weekly-test")}>Upload Weekly Test</div>
-              <div className="bg-orange-700 p-4 rounded-lg text-center cursor-pointer" onClick={() => navigate("/assignment-viewer")}>Assignment Viewer</div>
-              <div className="bg-pink-700 p-4 rounded-lg text-center cursor-pointer" onClick={() => navigate("/counsellorPage")}>University Counsellor</div>
-              <div className="bg-gray-700 p-4 rounded-lg text-center cursor-pointer" onClick={() => navigate("/exam-timetable")}>Exam Timetable</div>
-              <div className="bg-green-700 p-4 rounded-lg text-center cursor-pointer" onClick={() => navigate("/defaulter")}>Defaulter List</div>
+              <div
+                className="bg-indigo-700 p-4 rounded-xl text-center cursor-pointer shadow-md hover:scale-105 transition-all flex flex-col items-center justify-center"
+                onClick={() => navigate("/marksUpload")}
+              >
+                <List size={28} className="mb-2 text-white" />
+                <span className="text-lg font-semibold">Upload Exam Marks</span>
+              </div>
+
+              <div
+                className="bg-teal-700 p-4 rounded-xl text-center cursor-pointer shadow-md hover:scale-105 transition-all flex flex-col items-center justify-center"
+                onClick={() => navigate("/weeklyTestMarks")}
+              >
+                <BookOpen size={28} className="mb-2 text-white" />
+                <span className="text-lg font-semibold">Upload Weekly Test</span>
+              </div>
+
+              <div
+                className="bg-orange-700 p-4 rounded-xl text-center cursor-pointer shadow-md hover:scale-105 transition-all flex flex-col items-center justify-center"
+                onClick={() => navigate("/assignment-viewer")}
+              >
+                <Eye size={28} className="mb-2 text-white" />
+                <span className="text-lg font-semibold">Assignment Viewer</span>
+              </div>
+
+              <div
+                className="bg-pink-700 p-4 rounded-xl text-center cursor-pointer shadow-md hover:scale-105 transition-all flex flex-col items-center justify-center"
+                onClick={() => navigate("/counsellorPage")}
+              >
+                <Users size={28} className="mb-2 text-white" />
+                <span className="text-lg font-semibold">University Counsellor</span>
+              </div>
+
+              <div
+                className="bg-gray-700 p-4 rounded-xl text-center cursor-pointer shadow-md hover:scale-105 transition-all flex flex-col items-center justify-center"
+                onClick={() => navigate("/timetableView")}
+              >
+                <Calendar size={28} className="mb-2 text-white" />
+                <span className="text-lg font-semibold">Exam Timetable</span>
+              </div>
+
+              <div
+                className="bg-green-700 p-4 rounded-xl text-center cursor-pointer shadow-md hover:scale-105 transition-all flex flex-col items-center justify-center"
+                onClick={() => navigate("/defaulter")}
+              >
+                <Ban size={28} className="mb-2 text-white" />
+                <span className="text-lg font-semibold">Defaulter List</span>
+              </div>
             </div>
           </div>
         )}
