@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Rahul Patil",
+        "attended": 28,
+        "total": 40
+    },
+    {
+        "name": "Sneha Deshmukh",
+        "attended": 32,
+        "total": 40
+    },
+    {
+        "name": "Vikram Jadhav",
+        "attended": 20,
+        "total": 40
+    },
+    {
+        "name": "Neha Kulkarni",
+        "attended": 36,
+        "total": 40
+    },
+    {
+        "name": "Amit Pawar",
+        "attended": 26,
+        "total": 40
+    },
+    {
+        "name": "Pooja Ghadge",
+        "attended": 31,
+        "total": 40
+    },
+    {
+        "name": "Suresh Bhagat",
+        "attended": 22,
+        "total": 40
+    },
+    {
+        "name": "Priya More",
+        "attended": 29,
+        "total": 40
+    },
+    {
+        "name": "Rohan Chavan",
+        "attended": 27,
+        "total": 40
+    },
+    {
+        "name": "Swati Bhosale",
+        "attended": 34,
+        "total": 40
+    }
+]
