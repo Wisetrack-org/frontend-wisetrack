@@ -92,13 +92,79 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/login" element={<Signin />} />
           <Route path="landingPage" element={<LandingPage />} />
           <Route path="roleSelection" element={<RoleSelection />} />
           <Route path="studentLogin" element={<StudentLogin />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/landingPage" element={<LandingPage />} />
+          <Route path="/roleSelection" element={<RoleSelection />} />
+          <Route path="/studentLogin" element={<StudentLogin />} />
+          <Route path="/facultyLogin" element={<FacultyLogin />} />
+          <Route path="/adminLogin" element={<AdminLogin />} />
+          <Route path="/parentLogin" element={<ParentLogin />} />
+          <Route path="/motivationalQuote" element={<MotivationalQuote />} />
+          <Route path="/mainStudentPage" element={<MainStudentPage />} />
+          <Route path="/yogaMeditation" element={<YogaMeditation />} />
+          <Route path="/dailyYogaChallenge" element={<DailyYogaChallenge />} />
+          <Route path="/videoLibrary" element={<VideoLibrary />} />
+          <Route path="/gamesPage" element={<GamesPage />} />
+          <Route path="/relaxationMusic" element={<RelaxationMusic />} />
+          <Route path="/additionalCourses" element={<AdditionalCourses />} />
+          <Route path="/welcomeSection" element={<WelcomeSection />} />
+          <Route path="/todoList" element={<TodoList />} />
+          <Route path="/gamification" element={<Gamification />} />
+          <Route path="/profilePage" element={<ProfilePage />} />
+          <Route path="/logicGames" element={<LogicGames />} />
+          <Route path="/mathChallenges" element={<MathChallenges />} />
+          <Route path="/memoryBoost" element={<MemoryBoost />} />
+          <Route path="/puzzleQuest" element={<PuzzleQuest />} />
+          <Route path="/riddlesFun" element={<RiddlesFun />} />
+          <Route path="/speedTest" element={<SpeedTest />} />
+          <Route path="/counsellorPage" element={<CounsellorPage />} />
+          <Route path="/studentNotesViewer" element={<StudentNotesViewer />} />
+          <Route path="/teacherNotesUploader" element={<TeacherNotesUploader />} />
+          <Route path="/studentComplaintBox" element={<StudentComplaintBox />} />
+          <Route path="/universityComplaints" element={<UniversityComplaints />} />
+          <Route path="/studentQnA" element={<StudentQnA />} />
+          <Route path="/facultyQnA" element={<FacultyQnA />} />
+          <Route path="/codingPlatform" element={<CodingPlatform />} />
+          <Route path="/teacherMainDashboard" element={<TeacherMainDashboard />} />
+          <Route path="/milestoneTracker" element={<MilestoneTracker />} />
+          <Route path="/parentDashboard" element={<ParentDashboard />} />
+          <Route path="/motivation" element={<Motivation />} />
+          <Route path="/assignmentUpload" element={<AssignmentUpload />} />
+          <Route path="/assignmentViewer" element={<AssignmentViewer />} />
+          <Route path="/skillDevlopment" element={<SkillDevlopment />} />
+          <Route path="/carrerGoalModule" element={<CarrerGoalModule />} />
+          <Route path="/defaulter" element={<Defaulter />} />
+          <Route path="/dailyQuote" element={<DailyQuote />} />
+          <Route path="/motivationVideo" element={<MotivationVideo />} />
+          <Route path="/podcast" element={<Podcast />} />
+          <Route path="/productivity" element={<Productivity />} />
+          <Route path="/assignmentUploadValidator" element={<AssignmentUploadValidator />} />
+          <Route path="/assignmentViewerValidator" element={<AssignmentViewerValidator />} />
+          <Route path="/universityDashboard" element={<UniversityDashboard />} />
+          <Route path="/dropoutPredictionForm" element={<DropoutPredictionForm />} />
+          <Route path="/universityTimeTable" element={<UniversityTimeTable />} />
+          <Route path="/timetableView" element={<TimetableView />} />
+          <Route path="/getAnnouncement" element={<GetAnnouncement />} />
+          <Route path="/postAnnouncement" element={<PostAnnouncement />} />
+          <Route path="/marksUpload" element={<MarksUpload />} />
+          <Route path="/marksDashboard" element={<MarksDashboard />} />
+          <Route path="/studentData" element={<StudentData />} />
+          <Route path="/teacherList" element={<TeacherList />} />
+          <Route path="/weeklyTestMarks" element={<WeeklyTestMarks />} />
+          <Route path="/weeklyTestMarksS" element={<WeeklyTestMarksS />} />
+          <Route path="/assignmentManager" element={<AssignmentManager />} />
+
+          {/* Optional: Add a catch-all route for unknown URLs */}
+          <Route path="*" element={<div>Page Not Found</div>} />
 
           <Route
             path="/studentProfile"
