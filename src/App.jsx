@@ -3,7 +3,7 @@
 import { ProtectedRoute } from "./components/ProtectedRoutes/ProtectedRoutes.jsx";
 import { AuthProvider } from "./components/hooks/useAuth.jsx";
 import Signin from "./components/signin/page.jsx";
-import ProtectedPage from "./components/protectedPage/Page.jsx";
+// import ProtectedPage from "./components/protectedPage/Page.jsx";
 import UniversityMainDashboard from "./components/UniversityDashboard/UniversityMainDashboard.jsx";
 
 // function App() {
@@ -67,7 +67,7 @@ import Podcast from "./components/StudentDashboard/Motivation/Podcast.jsx"
 import Productivity from "./components/StudentDashboard/Motivation/Productivity.jsx"
 import AssignmentUploadValidator from './components/AssignmentUploader.jsx'
 import AssignmentViewerValidator from './components/AssignmentViewer.jsx'
-import UniversityDashboard from './components/UniversityDashboard/UniversityMainDashboard.jsx';
+// import UniversityDashboard from './components/UniversityDashboard/UniversityMainDashboard.jsx';
 import DropoutPredictionForm from './components/StudentDashboard/DroupoutPredictionForm.jsx';
 import UniversityTimeTable from './components/UniversityDashboard/UniversityTimeTable.jsx'
 import TimetableView from './components/StudentDashboard/TimetableView.jsx';
@@ -81,105 +81,150 @@ import WeeklyTestMarks from './components/TeacherDashboard/WeeklyTestMarks.jsx';
 import WeeklyTestMarksS from './components/StudentDashboard/WeeklyTestMarksS.jsx';
 import AssignmentManager from './components/StudentDashboard/AssignmentManager.jsx';
 
+
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import PrivateRoute from './components/privateRoutes.jsx';
+import Login from './pages/Login.jsx';
+// import Register from './pages/Register';
+// import StudentDashboard from './pages/StudentDashboard';
+import ProtectedPage from "./components/protectedPage/Page.jsx";
+// import TeacherDashboard from './pages/TeacherDashboard';
+// import UniversityDashboard from './pages/UniversityDashboard';
+// import Unauthorized from './pages/Unauthorized';
+// import NotFound from './pages/NotFound';
+
 function App() {
   return (
-    <BrowserRouter>
-      <AuthProvider>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/schedule" element={<Schedule />} />
-          <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/login" element={<Signin />} />
-          <Route path="landingPage" element={<LandingPage />} />
-          <Route path="roleSelection" element={<RoleSelection />} />
-          <Route path="studentLogin" element={<StudentLogin />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/landingPage" element={<LandingPage />} />
-          <Route path="/roleSelection" element={<RoleSelection />} />
-          <Route path="/studentLogin" element={<StudentLogin />} />
-          <Route path="/facultyLogin" element={<FacultyLogin />} />
-          <Route path="/adminLogin" element={<AdminLogin />} />
-          <Route path="/parentLogin" element={<ParentLogin />} />
-          <Route path="/motivationalQuote" element={<MotivationalQuote />} />
-          <Route path="/mainStudentPage" element={<MainStudentPage />} />
-          <Route path="/yogaMeditation" element={<YogaMeditation />} />
-          <Route path="/dailyYogaChallenge" element={<DailyYogaChallenge />} />
-          <Route path="/videoLibrary" element={<VideoLibrary />} />
-          <Route path="/gamesPage" element={<GamesPage />} />
-          <Route path="/relaxationMusic" element={<RelaxationMusic />} />
-          <Route path="/additionalCourses" element={<AdditionalCourses />} />
-          <Route path="/welcomeSection" element={<WelcomeSection />} />
-          <Route path="/todoList" element={<TodoList />} />
-          <Route path="/gamification" element={<Gamification />} />
-          <Route path="/profilePage" element={<ProfilePage />} />
-          <Route path="/logicGames" element={<LogicGames />} />
-          <Route path="/mathChallenges" element={<MathChallenges />} />
-          <Route path="/memoryBoost" element={<MemoryBoost />} />
-          <Route path="/puzzleQuest" element={<PuzzleQuest />} />
-          <Route path="/riddlesFun" element={<RiddlesFun />} />
-          <Route path="/speedTest" element={<SpeedTest />} />
-          <Route path="/counsellorPage" element={<CounsellorPage />} />
-          <Route path="/studentNotesViewer" element={<StudentNotesViewer />} />
-          <Route path="/teacherNotesUploader" element={<TeacherNotesUploader />} />
-          <Route path="/studentComplaintBox" element={<StudentComplaintBox />} />
-          <Route path="/universityComplaints" element={<UniversityComplaints />} />
-          <Route path="/studentQnA" element={<StudentQnA />} />
-          <Route path="/facultyQnA" element={<FacultyQnA />} />
-          <Route path="/codingPlatform" element={<CodingPlatform />} />
-          <Route path="/teacherMainDashboard" element={<TeacherMainDashboard />} />
-          <Route path="/milestoneTracker" element={<MilestoneTracker />} />
-          <Route path="/parentDashboard" element={<ParentDashboard />} />
-          <Route path="/motivation" element={<Motivation />} />
-          <Route path="/assignmentUpload" element={<AssignmentUpload />} />
-          <Route path="/assignmentViewer" element={<AssignmentViewer />} />
-          <Route path="/skillDevlopment" element={<SkillDevlopment />} />
-          <Route path="/carrerGoalModule" element={<CarrerGoalModule />} />
-          <Route path="/defaulter" element={<Defaulter />} />
-          <Route path="/dailyQuote" element={<DailyQuote />} />
-          <Route path="/motivationVideo" element={<MotivationVideo />} />
-          <Route path="/podcast" element={<Podcast />} />
-          <Route path="/productivity" element={<Productivity />} />
-          <Route path="/assignmentUploadValidator" element={<AssignmentUploadValidator />} />
-          <Route path="/assignmentViewerValidator" element={<AssignmentViewerValidator />} />
-          <Route path="/universityDashboard" element={<UniversityDashboard />} />
-          <Route path="/dropoutPredictionForm" element={<DropoutPredictionForm />} />
-          <Route path="/universityTimeTable" element={<UniversityTimeTable />} />
-          <Route path="/timetableView" element={<TimetableView />} />
-          <Route path="/getAnnouncement" element={<GetAnnouncement />} />
-          <Route path="/postAnnouncement" element={<PostAnnouncement />} />
-          <Route path="/marksUpload" element={<MarksUpload />} />
-          <Route path="/marksDashboard" element={<MarksDashboard />} />
-          <Route path="/studentData" element={<StudentData />} />
-          <Route path="/teacherList" element={<TeacherList />} />
-          <Route path="/weeklyTestMarks" element={<WeeklyTestMarks />} />
-          <Route path="/weeklyTestMarksS" element={<WeeklyTestMarksS />} />
-          <Route path="/assignmentManager" element={<AssignmentManager />} />
+    // <BrowserRouter>
+    //   <AuthProvider>
+    //     <Routes>
+    //       <Route path="/" element={<LandingPage />} />
+    //       <Route path="/schedule" element={<Schedule />} />
+    //       <Route path="/signup" element={<SignUpPage />} />
+    //       <Route path="/login" element={<Signin />} />
+    //       <Route path="landingPage" element={<LandingPage />} />
+    //       <Route path="roleSelection" element={<RoleSelection />} />
+    //       <Route path="studentLogin" element={<StudentLogin />} />
+    //       <Route path="/home" element={<Home />} />
+    //       <Route path="/signup" element={<SignUpPage />} />
+    //       <Route path="/landingPage" element={<LandingPage />} />
+    //       <Route path="/roleSelection" element={<RoleSelection />} />
+    //       <Route path="/studentLogin" element={<StudentLogin />} />
+    //       <Route path="/facultyLogin" element={<FacultyLogin />} />
+    //       <Route path="/adminLogin" element={<AdminLogin />} />
+    //       <Route path="/parentLogin" element={<ParentLogin />} />
+    //       <Route path="/motivationalQuote" element={<MotivationalQuote />} />
+    //       <Route path="/mainStudentPage" element={<MainStudentPage />} />
+    //       <Route path="/yogaMeditation" element={<YogaMeditation />} />
+    //       <Route path="/dailyYogaChallenge" element={<DailyYogaChallenge />} />
+    //       <Route path="/videoLibrary" element={<VideoLibrary />} />
+    //       <Route path="/gamesPage" element={<GamesPage />} />
+    //       <Route path="/relaxationMusic" element={<RelaxationMusic />} />
+    //       <Route path="/additionalCourses" element={<AdditionalCourses />} />
+    //       <Route path="/welcomeSection" element={<WelcomeSection />} />
+    //       <Route path="/todoList" element={<TodoList />} />
+    //       <Route path="/gamification" element={<Gamification />} />
+    //       <Route path="/profilePage" element={<ProfilePage />} />
+    //       <Route path="/logicGames" element={<LogicGames />} />
+    //       <Route path="/mathChallenges" element={<MathChallenges />} />
+    //       <Route path="/memoryBoost" element={<MemoryBoost />} />
+    //       <Route path="/puzzleQuest" element={<PuzzleQuest />} />
+    //       <Route path="/riddlesFun" element={<RiddlesFun />} />
+    //       <Route path="/speedTest" element={<SpeedTest />} />
+    //       <Route path="/counsellorPage" element={<CounsellorPage />} />
+    //       <Route path="/studentNotesViewer" element={<StudentNotesViewer />} />
+    //       <Route path="/teacherNotesUploader" element={<TeacherNotesUploader />} />
+    //       <Route path="/studentComplaintBox" element={<StudentComplaintBox />} />
+    //       <Route path="/universityComplaints" element={<UniversityComplaints />} />
+    //       <Route path="/studentQnA" element={<StudentQnA />} />
+    //       <Route path="/facultyQnA" element={<FacultyQnA />} />
+    //       <Route path="/codingPlatform" element={<CodingPlatform />} />
+    //       <Route path="/teacherMainDashboard" element={<TeacherMainDashboard />} />
+    //       <Route path="/milestoneTracker" element={<MilestoneTracker />} />
+    //       <Route path="/parentDashboard" element={<ParentDashboard />} />
+    //       <Route path="/motivation" element={<Motivation />} />
+    //       <Route path="/assignmentUpload" element={<AssignmentUpload />} />
+    //       <Route path="/assignmentViewer" element={<AssignmentViewer />} />
+    //       <Route path="/skillDevlopment" element={<SkillDevlopment />} />
+    //       <Route path="/carrerGoalModule" element={<CarrerGoalModule />} />
+    //       <Route path="/defaulter" element={<Defaulter />} />
+    //       <Route path="/dailyQuote" element={<DailyQuote />} />
+    //       <Route path="/motivationVideo" element={<MotivationVideo />} />
+    //       <Route path="/podcast" element={<Podcast />} />
+    //       <Route path="/productivity" element={<Productivity />} />
+    //       <Route path="/assignmentUploadValidator" element={<AssignmentUploadValidator />} />
+    //       <Route path="/assignmentViewerValidator" element={<AssignmentViewerValidator />} />
+    //       <Route path="/universityDashboard" element={<UniversityDashboard />} />
+    //       <Route path="/dropoutPredictionForm" element={<DropoutPredictionForm />} />
+    //       <Route path="/universityTimeTable" element={<UniversityTimeTable />} />
+    //       <Route path="/timetableView" element={<TimetableView />} />
+    //       <Route path="/getAnnouncement" element={<GetAnnouncement />} />
+    //       <Route path="/postAnnouncement" element={<PostAnnouncement />} />
+    //       <Route path="/marksUpload" element={<MarksUpload />} />
+    //       <Route path="/marksDashboard" element={<MarksDashboard />} />
+    //       <Route path="/studentData" element={<StudentData />} />
+    //       <Route path="/teacherList" element={<TeacherList />} />
+    //       <Route path="/weeklyTestMarks" element={<WeeklyTestMarks />} />
+    //       <Route path="/weeklyTestMarksS" element={<WeeklyTestMarksS />} />
+    //       <Route path="/assignmentManager" element={<AssignmentManager />} />
 
-          {/* Optional: Add a catch-all route for unknown URLs */}
-          <Route path="*" element={<div>Page Not Found</div>} />
+    //       {/* Optional: Add a catch-all route for unknown URLs */}
+    //       <Route path="*" element={<div>Page Not Found</div>} />
 
-          <Route
-            path="/studentProfile"
-            element={
-              <ProtectedRoute>
-                <ProtectedPage />
-              </ProtectedRoute>
-            }
-          />
+    //       <Route
+    //         path="/studentProfile"
+    //         element={
+    //           <ProtectedRoute>
+    //             <ProtectedPage />
+    //           </ProtectedRoute>
+    //         }
+    //       />
 
-          <Route
-            path="/universityDashboard"
-            element={
-              <ProtectedRoute>
-                <UniversityMainDashboard />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </AuthProvider>
-    </BrowserRouter>
-  );
+    //       <Route
+    //         path="/universityDashboard"
+    //         element={
+    //           <ProtectedRoute>
+    //             <UniversityMainDashboard />
+    //           </ProtectedRoute>
+    //         }
+    //       />
+    //     </Routes>
+    //   </AuthProvider>
+    // </BrowserRouter>
+
+      <Provider store={store}>
+        <Router>
+          <Routes>
+            {/* Public Routes */}
+            <Route path="/login" element={<Login />} />
+            {/* <Route path="/register" element={<Register />} /> */}
+  
+            {/* Student Routes */}
+            <Route element={<PrivateRoute allowedRoles={['student']} />}>
+              <Route path="/student/dashboard" element={<ProtectedPage />} />
+              {/* Add more student-specific routes here */}
+            </Route>
+  
+            {/* Teacher Routes */}
+            {/* <Route element={<PrivateRoute allowedRoles={['teacher']} />}>
+              <Route path="/teacher/dashboard" element={<TeacherDashboard />} />
+            </Route> */}
+  
+            {/* University Routes */}
+            {/* <Route element={<PrivateRoute allowedRoles={['university']} />}>
+              <Route path="/university/dashboard" element={<UniversityDashboard />} />
+            </Route> */}
+  
+            {/* Special Routes */}
+            {/* <Route path="/unauthorized" element={<Unauthorized />} />
+            <Route path="/" element={<Login />} />
+            <Route path="*" element={<NotFound />} /> */}
+          </Routes>
+        </Router>
+      </Provider>
+    );
 }
 
 export default App;

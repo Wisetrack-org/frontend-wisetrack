@@ -14,7 +14,7 @@ export const useUserData = (user, logout, navigate) => {
     const fetchUserData = async () => {
       try {
         const response = await fetch(
-          "https://nodebackend-wisetrack-production.up.railway.app/api/student/studentProfile",
+          "http://localhost:3000/api/student/studentProfile",
           {
             credentials: "include",
             headers: {
