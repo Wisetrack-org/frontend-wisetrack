@@ -1,231 +1,255 @@
-// src/redux/features/auth/authSlice.js
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+// import { createSlice } from '@reduxjs/toolkit';
+// import authService from './authService';
 
-const BASE_URL = 'http://localhost:3000';
+// // Get user from localStorage
+// const loadUser = () => {
+//   try {
+//     const userData = localStorage.getItem('user');
+//     return userData ? JSON.parse(userData) : null;
+//   } catch (error) {
+//     console.error('Error loading user from localStorage:', error);
+//     return null;
+//   }
+// };
+
+// const initialState = {
+//   user: loadUser(),
+//   isAuthenticated: Boolean(loadUser()),
+//   isLoading: false,
+//   error: null,
+// };
+
+// export const authSlice = createSlice({
+//   name: 'auth',
+//   initialState,
+//   reducers: {
+//     // Login start
+//     loginStart: (state) => {
+//       state.isLoading = true;
+//       state.error = null;
+//     },
+//     // Login success
+//     loginSuccess: (state, action) => {
+//       state.isLoading = false;
+//       state.isAuthenticated = true;
+//       state.user = action.payload;
+//       state.error = null;
+//     },
+//     // Login fail
+//     loginFail: (state, action) => {
+//       state.isLoading = false;
+//       state.isAuthenticated = false;
+//       state.user = null;
+//       state.error = action.payload;
+//     },
+//     // Logout
+//     logout: (state) => {
+//       state.user = null;
+//       state.isAuthenticated = false;
+//       // Don't call localStorage here - it's a side effect
+//       // We'll handle this in the thunk
+//     },
+//     // Reset state
+//     reset: (state) => {
+//       state.isLoading = false;
+//       state.error = null;
+//     },
+//     // Clear error
+//     clearError: (state) => {
+//       state.error = null;
+//     }
+//   },
+// });
+
+// // Export actions
+// export const { loginStart, loginSuccess, loginFail, logout, reset, clearError } = authSlice.actions;
+
+// // Login action (thunk)
+// export const login = (userData) => async (dispatch) => {
+//   try {
+//     dispatch(loginStart());
+    
+//     // Determine which endpoint to use based on user role
+//     let endpoint;
+//     switch (userData.role) {
+//       case 'student':
+//         endpoint = 'http://localhost:3000/api/studentSignin';
+//         break;
+//       case 'teacher':
+//         endpoint = 'http://localhost:3000/api/teacherSignin';
+//         break;
+//       case 'university':
+//         endpoint = 'http://localhost:3000/api/universitySignin';
+//         break;
+//       default:
+//         endpoint = 'http://localhost:3000/api/studentSignin';
+//     }
+    
+//     const response = await authService.login(endpoint, userData);
+    
+//     // Save user to localStorage
+//     if (response) {
+//       localStorage.setItem('user', JSON.stringify(response));
+//     }
+    
+//     dispatch(loginSuccess(response));
+//   } catch (error) {
+//     const message = 
+//       error.response?.data?.message || 
+//       error.message || 
+//       'Login failed';
+//     dispatch(loginFail(message));
+//   }
+// };
+
+// // Logout thunk - handles side effects properly
+// export const logoutUser = () => async (dispatch) => {
+//   try {
+//     // Call logout service if needed
+//     await authService.logout();
+    
+//     // Remove from localStorage
+//     localStorage.removeItem('user');
+    
+//     // Update state
+//     dispatch(logout());
+//   } catch (error) {
+//     console.error('Logout error:', error);
+//   }
+// };
+
+// export default authSlice.reducer;
+// src/redux/features/auth/authSlice.js
+import { createSlice } from '@reduxjs/toolkit';
+import authService from './authService';
 
 // Get user from localStorage
-// const user = JSON.parse(localStorage.getItem('user')) || null;
-// const token = localStorage.getItem('token') || null;
-const storedUser = localStorage.getItem('user');
-const user = storedUser ? JSON.parse(storedUser) : null;
-
-const token = localStorage.getItem('token') || null;
-
-const initialState = {
-  user: user,
-  token: token,
-  role: user?.student_id ? 'student' : 
-        user?.teacher_id ? 'teacher' : 
-        user?.university_id ? 'university' : null,
-  isAuthenticated: !!token,
-  isLoading: false,
-  error: null,
-  message: ''
+const loadUser = () => {
+  try {
+    const userData = localStorage.getItem('user');
+    return userData ? JSON.parse(userData) : null;
+  } catch (error) {
+    console.error('Error loading user from localStorage:', error);
+    return null;
+  }
 };
 
-// Login user
-export const login = createAsyncThunk(
-  'auth/login',
-  async ({ email, password, role }, thunkAPI) => {
-    try {
-      // Select the correct endpoint based on role
-      const endpoint = 
-        role === "student" ? `${BASE_URL}/api/studentSignin` :
-        role === "teacher" ? `${BASE_URL}/api/teacherSignin` :
-        role === "university" ? `${BASE_URL}/api/universitySignin` :
-        null;
-      
-      if (!endpoint) {
-        return thunkAPI.rejectWithValue('Invalid role selected');
-      }
+const initialState = {
+  user: loadUser(),
+  isAuthenticated: Boolean(loadUser()),
+  isLoading: false,
+  error: null,
+};
 
-      const response = await axios.post(endpoint, {
-        email,
-        password
-      }, {withCredentials: true});
-
-      // Store user and token in localStorage
-      localStorage.setItem('user', JSON.stringify(response.data.user));
-      localStorage.setItem('token', response.data.token);
-
-      return {
-        user: response.data.user,
-        token: response.data.token,
-        role
-      };
-    } catch (error) {
-      const message = error.response?.data?.message || 'Login failed';
-      return thunkAPI.rejectWithValue(message);
-    }
-  }
-);
-
-// Register user
-export const register = createAsyncThunk(
-  'auth/register',
-  async (userData, thunkAPI) => {
-    try {
-      const { role, ...data } = userData;
-      
-      // Select the correct endpoint based on role
-      const endpoint = 
-        role === "student" ? `${BASE_URL}/api/studentSignup` :
-        role === "teacher" ? `${BASE_URL}/api/teacherSignup` :
-        role === "university" ? `${BASE_URL}/api/universitySignup` :
-        null;
-      
-      if (!endpoint) {
-        return thunkAPI.rejectWithValue('Invalid role selected');
-      }
-
-      const response = await axios.post(endpoint, data);
-
-      // On successful registration, we'll automatically log the user in
-      localStorage.setItem('user', JSON.stringify(response.data.user));
-      localStorage.setItem('token', response.data.token);
-
-      return {
-        user: response.data.user,
-        token: response.data.token,
-        role
-      };
-    } catch (error) {
-      const message = error.response?.data?.message || 'Registration failed';
-      return thunkAPI.rejectWithValue(message);
-    }
-  }
-);
-
-// Logout user
-export const logout = createAsyncThunk('auth/logout', async () => {
-  try {
-    // Clear data from localStorage
-    localStorage.removeItem('user');
-    localStorage.removeItem('token');
-
-    // You can optionally make a server logout request if needed
-    // await axios.post(`${BASE_URL}/api/logout`);
-  } catch (error) {
-    console.error('Logout error:', error);
-  }
-});
-
-// Get user profile
-export const getUserProfile = createAsyncThunk(
-  'auth/getProfile',
-  async (_, thunkAPI) => {
-    try {
-      const state = thunkAPI.getState();
-      const role = state.auth.role;
-      
-      if (!role) {
-        return thunkAPI.rejectWithValue('User role not found');
-      }
-
-      const config = {
-        headers: {
-          Authorization: `Bearer ${state.auth.token}`
-        }
-      };
-
-      // Get the correct profile endpoint based on role
-      let endpoint;
-      switch (role) {
-        case 'student':
-          endpoint = '/api/student/studentProfile';
-          break;
-        case 'teacher':
-          endpoint = '/api/teacher/teacherProfile';
-          break;
-        case 'university':
-          endpoint = '/api/university/universityProfile';
-          break;
-        default:
-          return thunkAPI.rejectWithValue('Invalid user role');
-      }
-
-      const response = await axios.get(`${BASE_URL}${endpoint}`, config);
-      return response.data;
-    } catch (error) {
-      const message = error.response?.data?.message || 'Failed to get user profile';
-      return thunkAPI.rejectWithValue(message);
-    }
-  }
-);
-
-const authSlice = createSlice({
+export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
+    loginStart: (state) => {
+      state.isLoading = true;
+      state.error = null;
+    },
+    loginSuccess: (state, action) => {
+      state.isLoading = false;
+      state.isAuthenticated = true;
+      state.user = action.payload;
+      state.error = null;
+    },
+    loginFail: (state, action) => {
+      state.isLoading = false;
+      state.isAuthenticated = false;
+      state.user = null;
+      state.error = action.payload;
+    },
+    logout: (state) => {
+      state.user = null;
+      state.isAuthenticated = false;
+    },
     reset: (state) => {
       state.isLoading = false;
       state.error = null;
-      state.message = '';
     },
     clearError: (state) => {
       state.error = null;
     }
   },
-  extraReducers: (builder) => {
-    builder
-      // Login
-      .addCase(login.pending, (state) => {
-        state.isLoading = true;
-        state.error = null;
-      })
-      .addCase(login.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isAuthenticated = true;
-        state.user = action.payload.user;
-        state.token = action.payload.token;
-        state.role = action.payload.role;
-        state.message = 'Login successful';
-      })
-      .addCase(login.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-        state.isAuthenticated = false;
-      })
-      // Register
-      .addCase(register.pending, (state) => {
-        state.isLoading = true;
-        state.error = null;
-      })
-      .addCase(register.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isAuthenticated = true;
-        state.user = action.payload.user;
-        state.token = action.payload.token;
-        state.role = action.payload.role;
-        state.message = 'Registration successful';
-      })
-      .addCase(register.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
-      // Logout
-      .addCase(logout.fulfilled, (state) => {
-        state.user = null;
-        state.token = null;
-        state.role = null;
-        state.isAuthenticated = false;
-        state.message = 'Logged out successfully';
-      })
-      // Get Profile
-      .addCase(getUserProfile.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(getUserProfile.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.user = { ...state.user, ...action.payload };
-      })
-      .addCase(getUserProfile.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      });
-  }
 });
 
-export const { reset, clearError } = authSlice.actions;
+// Export actions
+export const { loginStart, loginSuccess, loginFail, logout, reset, clearError } = authSlice.actions;
+
+// ithun login hota
+export const login = (userData) => async (dispatch) => {
+  try {
+    dispatch(loginStart());
+    
+    // he endpoints
+    let endpoint;
+    switch (userData.role) {
+      case 'student':
+        endpoint = 'http://localhost:3000/api/studentSignin';
+        break;
+      case 'teacher':
+        endpoint = 'http://localhost:3000/api/teacherSignin';
+        break;
+      case 'university':
+        endpoint = 'http://localhost:3000/api/universitySignin';
+        break;
+      case 'parent':
+        endpoint = 'http://localhost:3000/api/parentSignin';
+        break;
+      default:
+        endpoint = '/api/studentSignin';
+    }
+    
+    const response = await authService.login(endpoint, userData);
+    
+    // safety sathi
+    const userWithRole = {
+      ...response,
+      userType: response.userType || mapRoleToUserType(userData.role)
+    };
+    
+    // localStorage
+    if (userWithRole) {
+      localStorage.setItem('user', JSON.stringify(userWithRole));
+    }
+    
+    dispatch(loginSuccess(userWithRole));
+  } catch (error) {
+    const message = 
+      error.response?.data?.message || 
+      error.message || 
+      'Login failed';
+    dispatch(loginFail(message));
+  }
+};
+
+const mapRoleToUserType = (role) => {
+  switch (role) {
+    case 'student':
+      return 'students';
+    case 'teacher':
+      return 'teachers';
+    case 'university':
+      return 'universities';
+    case 'parent':
+      return 'parents';
+    default:
+      return 'students';
+  }
+};
+
+export const logoutUser = () => async (dispatch) => {
+  try {
+    await authService.logout();
+    
+    localStorage.removeItem('user');
+    
+    dispatch(logout());
+  } catch (error) {
+    console.error('Logout error:', error);
+  }
+};
+
 export default authSlice.reducer;

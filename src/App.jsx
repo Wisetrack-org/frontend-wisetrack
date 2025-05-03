@@ -54,7 +54,7 @@ import FacultyQnA from './components/TeacherDashboard/FacultyQnA.jsx';
 import CodingPlatform from './components/StudentDashboard/CodingPlatform.jsx';
 import TeacherMainDashboard from './components/TeacherDashboard/TeacherMainDashboard.jsx';
 import MilestoneTracker from './components/StudentDashboard/MilestoneTracker.jsx'
-import ParentDashboard from './components/ParentDashboard/ParentMainDashboard.jsx';
+// import ParentDashboard from './components/ParentDashboard/ParentMainDashboard.jsx';
 import Motivation from './components/StudentDashboard/Motivation/Motivation.jsx';
 import AssignmentUpload from './components/TeacherDashboard/AssignmentUploads.jsx';
 import AssignmentViewer from './components/StudentDashboard/AssignmentViewer.jsx';
@@ -84,12 +84,16 @@ import AssignmentManager from './components/StudentDashboard/AssignmentManager.j
 
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import { store } from './redux/store';
 import PrivateRoute from './components/privateRoutes.jsx';
+import StudentDashboard from './pages/StudentDashboard';
+import TeacherDashboard from "./pages/TeacherDashboard.jsx";
+import ParentDashboard from "./pages/ParentDashboard.jsx";
 import Login from './pages/Login.jsx';
 // import Register from './pages/Register';
 // import StudentDashboard from './pages/StudentDashboard';
 import ProtectedPage from "./components/protectedPage/Page.jsx";
+import UniversityDashboard from "./pages/UniversityDashboard.jsx";
 // import TeacherDashboard from './pages/TeacherDashboard';
 // import UniversityDashboard from './pages/UniversityDashboard';
 // import Unauthorized from './pages/Unauthorized';
@@ -194,36 +198,36 @@ function App() {
     //   </AuthProvider>
     // </BrowserRouter>
 
-      <Provider store={store}>
-        <Router>
-          <Routes>
-            {/* Public Routes */}
-            <Route path="/login" element={<Login />} />
-            {/* <Route path="/register" element={<Register />} /> */}
-  
-            {/* Student Routes */}
-            <Route element={<PrivateRoute allowedRoles={['student']} />}>
-              <Route path="/student/dashboard" element={<ProtectedPage />} />
-              {/* Add more student-specific routes here */}
-            </Route>
-  
-            {/* Teacher Routes */}
-            {/* <Route element={<PrivateRoute allowedRoles={['teacher']} />}>
-              <Route path="/teacher/dashboard" element={<TeacherDashboard />} />
-            </Route> */}
-  
-            {/* University Routes */}
-            {/* <Route element={<PrivateRoute allowedRoles={['university']} />}>
-              <Route path="/university/dashboard" element={<UniversityDashboard />} />
-            </Route> */}
-  
-            {/* Special Routes */}
-            {/* <Route path="/unauthorized" element={<Unauthorized />} />
-            <Route path="/" element={<Login />} />
-            <Route path="*" element={<NotFound />} /> */}
-          </Routes>
-        </Router>
-      </Provider>
+    <Provider store={store}>
+    <Router>
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        
+        {/* Protected Routes for Students */}
+        <Route element={<PrivateRoute allowedRoles={['students']} />}>
+          <Route path="/student/dashboard" element={<StudentDashboard />} />
+        </Route>
+        
+        <Route element={<PrivateRoute allowedRoles={['teachers']} />}>
+            <Route path="/teacher/dashboard" element={<TeacherDashboard />} />
+          </Route>
+          
+          {/* Protected Routes for Universities */}
+          <Route element={<PrivateRoute allowedRoles={['universities']} />}>
+            <Route path="/university/dashboard" element={<UniversityDashboard />} />
+          </Route>
+          
+          {/* Protected Routes for Parents - tu ithe parents che subfiles add kr ma ani same student ani so on  */}
+          <Route element={<PrivateRoute allowedRoles={['parents']} />}>
+            <Route path="/parent/dashboard" element={<ParentDashboard />} /> {/* ithe, nested add kr */}
+          </Route>
+        {/* Catch all route */}
+        {/* <Route path="*" element={<NotFound />} /> */}
+      </Routes>
+    </Router>
+  </Provider>
     );
 }
 
