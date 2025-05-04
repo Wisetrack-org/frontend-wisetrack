@@ -1,6 +1,3 @@
-
-
-
 import { motion } from "framer-motion";
 import { FaUser } from "react-icons/fa";
 import MotivationalQuote from "./MotivationalQuote";
@@ -18,7 +15,7 @@ const WelcomeSection = ({ studentName }) => {
         <h2 className="text-3xl font-bold">Hello, {studentName}!</h2>
       </div>
 
-      <div className="mt-4 p-4 bg-gray-900 bg-opacity-40 rounded-lg border-l-4 border-blue-500">
+      <div className="mt-4 p-4 bg-gray-900 bg-opacity-40 rounded-lg border-l-4 border-blue-500 flex justify-center">
         <MotivationalQuote />
       </div>
     </motion.div>

@@ -12,88 +12,89 @@ import UniversityMainDashboard from "./components/UniversityDashboard/University
 
 // export default App;
 
-
-
-import React from 'react';
+import React from "react";
 // import MainLayout from "./components/MainLayout";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Schedule from "./components/StudentDashboard/Schedule.jsx";
 import SignUpPage from "./components/Signup/SignUpPage.jsx";
 import Home from "./components/HomePage/Home.jsx";
-import LandingPage from "./components/LandingPages/LandingPage.jsx"
-import RoleSelection from "./components/LandingPages/RoleSelection.jsx"
-import StudentLogin from "./components/LoginPages/StudentLogin.jsx"
-import FacultyLogin from "./components/LoginPages/FacultyLogin.jsx"
+import LandingPage from "./components/LandingPages/LandingPage.jsx";
+import RoleSelection from "./components/LandingPages/RoleSelection.jsx";
+import StudentLogin from "./components/LoginPages/StudentLogin.jsx";
+import FacultyLogin from "./components/LoginPages/FacultyLogin.jsx";
 import AdminLogin from "./components/LoginPages/AdminLogin.jsx";
 import ParentLogin from "./components/LoginPages/ParentLogin.jsx";
-import MotivationalQuote from "./components/StudentDashboard/MotivationalQuote.jsx"
-import MainStudentPage from "./components/StudentDashboard/MainStudentPage.jsx"
-import YogaMeditation from "./components/StudentDashboard/YogaMeditation.jsx"
-import DailyYogaChallenge from "./components/StudentDashboard/DailyYogaChallenge.jsx"
+import MotivationalQuote from "./components/StudentDashboard/MotivationalQuote.jsx";
+import MainStudentPage from "./components/StudentDashboard/MainStudentPage.jsx";
+import YogaMeditation from "./components/StudentDashboard/YogaMeditation.jsx";
+import DailyYogaChallenge from "./components/StudentDashboard/DailyYogaChallenge.jsx";
 import VideoLibrary from "./components/StudentDashboard/VideoLibrary.jsx";
-import GamesPage from "./components/StudentDashboard/GamesPage.jsx"
+import GamesPage from "./components/StudentDashboard/GamesPage.jsx";
 import RelaxationMusic from "./components/StudentDashboard/MusicLibrary.jsx";
 import AdditionalCourses from "./components/StudentDashboard/AdditionalCourses.jsx";
 import WelcomeSection from "./components/StudentDashboard/WelcomeSection.jsx";
-import TodoList from './components/StudentDashboard/TodoList.jsx';
-import Gamification from "./components/StudentDashboard/Gamification/Gamification.jsx"
-import ProfilePage from "./components/StudentDashboard/Gamification/ProfilePage.jsx"
+import TodoList from "./components/StudentDashboard/TodoList.jsx";
+import Gamification from "./components/StudentDashboard/Gamification/Gamification.jsx";
+import ProfilePage from "./components/StudentDashboard/Gamification/ProfilePage.jsx";
 import LogicGames from "./components/StudentDashboard/Gamification/LogicGames.jsx";
-import MathChallenges from "./components/StudentDashboard/Gamification/MathChallenges.jsx"
-import MemoryBoost from "./components/StudentDashboard/Gamification/MemoryBoost.jsx"
-import PuzzleQuest from "./components/StudentDashboard/Gamification/PuzzleQuest.jsx"
-import RiddlesFun from "./components/StudentDashboard/Gamification/RiddlesFun.jsx"
-import SpeedTest from "./components/StudentDashboard/Gamification/SpeedTest.jsx"
-import CounsellorPage from './components/StudentDashboard/ConsellorPage.jsx';
+import MathChallenges from "./components/StudentDashboard/Gamification/MathChallenges.jsx";
+import MemoryBoost from "./components/StudentDashboard/Gamification/MemoryBoost.jsx";
+import PuzzleQuest from "./components/StudentDashboard/Gamification/PuzzleQuest.jsx";
+import RiddlesFun from "./components/StudentDashboard/Gamification/RiddlesFun.jsx";
+import SpeedTest from "./components/StudentDashboard/Gamification/SpeedTest.jsx";
+import CounsellorPage from "./components/StudentDashboard/ConsellorPage.jsx";
 import StudentNotesViewer from "./components/StudentDashboard/StudentNotesViewer";
 import TeacherNotesUploader from "./components/TeacherDashboard/TeacherNotesUploader";
-import StudentComplaintBox from './components/StudentDashboard/StudentComplaintBox.jsx';
-import UniversityComplaints from './components/UniversityDashboard/UniversityComplaints.jsx';
-import StudentQnA from './components/StudentDashboard/StudentQnA.jsx';
-import FacultyQnA from './components/TeacherDashboard/FacultyQnA.jsx';
-import CodingPlatform from './components/StudentDashboard/CodingPlatform.jsx';
-import TeacherMainDashboard from './components/TeacherDashboard/TeacherMainDashboard.jsx';
-import MilestoneTracker from './components/StudentDashboard/MilestoneTracker.jsx'
+import StudentComplaintBox from "./components/StudentDashboard/StudentComplaintBox.jsx";
+import UniversityComplaints from "./components/UniversityDashboard/UniversityComplaints.jsx";
+import StudentQnA from "./components/StudentDashboard/StudentQnA.jsx";
+import FacultyQnA from "./components/TeacherDashboard/FacultyQnA.jsx";
+import CodingPlatform from "./components/StudentDashboard/CodingPlatform.jsx";
+import TeacherMainDashboard from "./components/TeacherDashboard/TeacherMainDashboard.jsx";
+import MilestoneTracker from "./components/StudentDashboard/MilestoneTracker.jsx";
 // import ParentDashboard from './components/ParentDashboard/ParentMainDashboard.jsx';
-import Motivation from './components/StudentDashboard/Motivation/Motivation.jsx';
-import AssignmentUpload from './components/TeacherDashboard/AssignmentUploads.jsx';
-import AssignmentViewer from './components/StudentDashboard/AssignmentViewer.jsx';
-import SkillDevlopment from './components/StudentDashboard/SkillDevlopment.jsx'
-import CarrerGoalModule from './components/StudentDashboard/CarrerGoalModule.jsx'
+import Motivation from "./components/StudentDashboard/Motivation/Motivation.jsx";
+import AssignmentUpload from "./components/TeacherDashboard/AssignmentUploads.jsx";
+import AssignmentViewer from "./components/StudentDashboard/AssignmentViewer.jsx";
+import SkillDevlopment from "./components/StudentDashboard/SkillDevlopment.jsx";
+import CarrerGoalModule from "./components/StudentDashboard/CarrerGoalModule.jsx";
 import Defaulter from "./components/TeacherDashboard/Defaulter.jsx";
-import DailyQuote from "./components/StudentDashboard/Motivation/DailyQuiote.jsx"
-import MotivationVideo from "./components/StudentDashboard/Motivation/MotivationVideo.jsx"
-import Podcast from "./components/StudentDashboard/Motivation/Podcast.jsx"
-import Productivity from "./components/StudentDashboard/Motivation/Productivity.jsx"
-import AssignmentUploadValidator from './components/AssignmentUploader.jsx'
-import AssignmentViewerValidator from './components/AssignmentViewer.jsx'
+import DailyQuote from "./components/StudentDashboard/Motivation/DailyQuiote.jsx";
+import MotivationVideo from "./components/StudentDashboard/Motivation/MotivationVideo.jsx";
+import Podcast from "./components/StudentDashboard/Motivation/Podcast.jsx";
+import Productivity from "./components/StudentDashboard/Motivation/Productivity.jsx";
+import AssignmentUploadValidator from "./components/AssignmentUploader.jsx";
+import AssignmentViewerValidator from "./components/AssignmentViewer.jsx";
 // import UniversityDashboard from './components/UniversityDashboard/UniversityMainDashboard.jsx';
-import DropoutPredictionForm from './components/StudentDashboard/DroupoutPredictionForm.jsx';
-import UniversityTimeTable from './components/UniversityDashboard/UniversityTimeTable.jsx'
-import TimetableView from './components/StudentDashboard/TimetableView.jsx';
-import GetAnnouncement from './components/Announcement/GetAnnouncement.jsx';
-import PostAnnouncement from './components/Announcement/PostAnnouncement.jsx';
-import MarksUpload from './components/UniversityDashboard/MarksUpload.jsx';
-import MarksDashboard from './components/StudentDashboard/MarksDashboard.jsx';
-import StudentData from './components/UniversityDashboard/StudentData.jsx'
-import TeacherList from './components/UniversityDashboard/TeacherList.jsx';
-import WeeklyTestMarks from './components/TeacherDashboard/WeeklyTestMarks.jsx';
-import WeeklyTestMarksS from './components/StudentDashboard/WeeklyTestMarksS.jsx';
-import AssignmentManager from './components/StudentDashboard/AssignmentManager.jsx';
+import DropoutPredictionForm from "./components/StudentDashboard/DroupoutPredictionForm.jsx";
+import UniversityTimeTable from "./components/UniversityDashboard/UniversityTimeTable.jsx";
+import TimetableView from "./components/StudentDashboard/TimetableView.jsx";
+import GetAnnouncement from "./components/Announcement/GetAnnouncement.jsx";
+import PostAnnouncement from "./components/Announcement/PostAnnouncement.jsx";
+import MarksUpload from "./components/UniversityDashboard/MarksUpload.jsx";
+import MarksDashboard from "./components/StudentDashboard/MarksDashboard.jsx";
+import StudentData from "./components/UniversityDashboard/StudentData.jsx";
+import TeacherList from "./components/UniversityDashboard/TeacherList.jsx";
+import WeeklyTestMarks from "./components/TeacherDashboard/WeeklyTestMarks.jsx";
+import WeeklyTestMarksS from "./components/StudentDashboard/WeeklyTestMarksS.jsx";
+import AssignmentManager from "./components/StudentDashboard/AssignmentManager.jsx";
 
-
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { store } from './redux/store';
-import PrivateRoute from './components/privateRoutes.jsx';
-import StudentDashboard from './pages/StudentDashboard';
+import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+import PrivateRoute from "./components/privateRoutes.jsx";
+import StudentDashboard from "./pages/StudentDashboard";
 import TeacherDashboard from "./pages/TeacherDashboard.jsx";
 import ParentDashboard from "./pages/ParentDashboard.jsx";
-import Login from './pages/Login.jsx';
+import Login from "./pages/Login.jsx";
 // import Register from './pages/Register';
 // import StudentDashboard from './pages/StudentDashboard';
 import ProtectedPage from "./components/protectedPage/Page.jsx";
 import UniversityDashboard from "./pages/UniversityDashboard.jsx";
+import Homepage from "./components/LandingPages/LandingPage.jsx";
+import AssignedClasses from "./components/TeacherDashboard/AssignedClasses.jsx";
+import StudentList from "./components/UniversityDashboard/StudentData.jsx";
+import ParentFeedback from "./components/TeacherDashboard/ParentFeedback.jsx";
 // import TeacherDashboard from './pages/TeacherDashboard';
 // import UniversityDashboard from './pages/UniversityDashboard';
 // import Unauthorized from './pages/Unauthorized';
@@ -109,7 +110,6 @@ function App() {
     //       <Route path="/signup" element={<SignUpPage />} />
     //       <Route path="/login" element={<Signin />} />
     //       <Route path="landingPage" element={<LandingPage />} />
-    //       <Route path="roleSelection" element={<RoleSelection />} />
     //       <Route path="studentLogin" element={<StudentLogin />} />
     //       <Route path="/home" element={<Home />} />
     //       <Route path="/signup" element={<SignUpPage />} />
@@ -143,9 +143,7 @@ function App() {
     //       <Route path="/studentComplaintBox" element={<StudentComplaintBox />} />
     //       <Route path="/universityComplaints" element={<UniversityComplaints />} />
     //       <Route path="/studentQnA" element={<StudentQnA />} />
-    //       <Route path="/facultyQnA" element={<FacultyQnA />} />
     //       <Route path="/codingPlatform" element={<CodingPlatform />} />
-    //       <Route path="/teacherMainDashboard" element={<TeacherMainDashboard />} />
     //       <Route path="/milestoneTracker" element={<MilestoneTracker />} />
     //       <Route path="/parentDashboard" element={<ParentDashboard />} />
     //       <Route path="/motivation" element={<Motivation />} />
@@ -153,7 +151,6 @@ function App() {
     //       <Route path="/assignmentViewer" element={<AssignmentViewer />} />
     //       <Route path="/skillDevlopment" element={<SkillDevlopment />} />
     //       <Route path="/carrerGoalModule" element={<CarrerGoalModule />} />
-    //       <Route path="/defaulter" element={<Defaulter />} />
     //       <Route path="/dailyQuote" element={<DailyQuote />} />
     //       <Route path="/motivationVideo" element={<MotivationVideo />} />
     //       <Route path="/podcast" element={<Podcast />} />
@@ -176,59 +173,74 @@ function App() {
 
     //       {/* Optional: Add a catch-all route for unknown URLs */}
     //       <Route path="*" element={<div>Page Not Found</div>} />
-
+    
     //       <Route
     //         path="/studentProfile"
     //         element={
-    //           <ProtectedRoute>
-    //             <ProtectedPage />
-    //           </ProtectedRoute>
-    //         }
-    //       />
-
-    //       <Route
-    //         path="/universityDashboard"
-    //         element={
-    //           <ProtectedRoute>
-    //             <UniversityMainDashboard />
-    //           </ProtectedRoute>
-    //         }
-    //       />
-    //     </Routes>
-    //   </AuthProvider>
-    // </BrowserRouter>
-
-    <Provider store={store}>
-    <Router>
-      <Routes>
-        {/* Public Routes */}
-        <Route path="/" element={<Login />} />
-        <Route path="/login" element={<Login />} />
+      //           <ProtectedRoute>
+      //             <ProtectedPage />
+      //           </ProtectedRoute>
+      //         }
+      //       />
+      
+      //       <Route
+      //         path="/universityDashboard"
+      //         element={
+        //           <ProtectedRoute>
+        //             <UniversityMainDashboard />
+        //           </ProtectedRoute>
+        //         }
+        //       />
+        //     </Routes>
+        //   </AuthProvider>
+        // </BrowserRouter>
         
-        {/* Protected Routes for Students */}
-        <Route element={<PrivateRoute allowedRoles={['students']} />}>
-          <Route path="/student/dashboard" element={<StudentDashboard />} />
-        </Route>
-        
-        <Route element={<PrivateRoute allowedRoles={['teachers']} />}>
-            <Route path="/teacher/dashboard" element={<TeacherDashboard />} />
+        <Provider store={store}>
+      <Router>
+        <Routes>
+          {/* Public Routes */}
+          <Route path="/" element={<Homepage />} />
+          <Route path="/login" element={<Login />} />
+          {/* <Route path="roleSelection" element={<RoleSelection />} /> */}
+
+          {/* Protected Routes for Students */}
+          <Route element={<PrivateRoute allowedRoles={["students"]} />}>
+            <Route path="/student/dashboard" element={<StudentDashboard />} />
           </Route>
-          
+
+          <Route element={<PrivateRoute allowedRoles={["teachers"]} />}>
+            {/* <Route path="/teacher/dashboard" element={<TeacherDashboard />} /> */}
+            <Route
+              path="/teacher/dashboard"
+              element={<TeacherMainDashboard />}
+              />
+            {/* <Route path="/facultyQnA" element={<FacultyQnA />} /> */}
+            {/* teacherMainDashboard */}
+            <Route path="/assigned-classes" element={<AssignedClasses />} />
+            <Route path="/students" element={<StudentList />} />
+            <Route path="/feedback-parents" element={<ParentFeedback/>} />
+            <Route path="/defaulter" element={<Defaulter />} />
+          </Route>
+
           {/* Protected Routes for Universities */}
-          <Route element={<PrivateRoute allowedRoles={['universities']} />}>
-            <Route path="/university/dashboard" element={<UniversityDashboard />} />
+          <Route element={<PrivateRoute allowedRoles={["universities"]} />}>
+            <Route
+              path="/university/dashboard"
+              element={<UniversityDashboard />}
+            />
           </Route>
-          
+
           {/* Protected Routes for Parents - tu ithe parents che subfiles add kr ma ani same student ani so on  */}
-          <Route element={<PrivateRoute allowedRoles={['parents']} />}>
-            <Route path="/parent/dashboard" element={<ParentDashboard />} /> {/* ithe, nested add kr */}
+          <Route element={<PrivateRoute allowedRoles={["parents"]} />}>
+            <Route path="/parent/dashboard" element={<ParentDashboard />} />{" "}
+            {/* ithe, nested add kr */}
           </Route>
-        {/* Catch all route */}
-        {/* <Route path="*" element={<NotFound />} /> */}
-      </Routes>
-    </Router>
-  </Provider>
-    );
+          {/* Catch all route */}
+          {/* <Route path="*" element={<NotFound />} /> */}
+        </Routes>
+      </Router>
+    </Provider>
+  );
 }
 
 export default App;
