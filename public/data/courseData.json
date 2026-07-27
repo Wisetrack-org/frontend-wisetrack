@@ -1,0 +1,290 @@
+{
+    "First Year": [
+        {
+            "id": 1,
+            "title": "Introduction to Programming",
+            "description": "Learn the basics of programming with Python.",
+            "image": "https://i.pinimg.com/736x/2d/d8/03/2dd8031b5e88f0104d083e4ed6233bc0.jpg",
+            "link": "https://www.learnpython.org/"
+        },
+        {
+            "id": 2,
+            "title": "Basic Web Development",
+            "description": "Build simple web pages using HTML and CSS.",
+            "image": "https://i.pinimg.com/736x/41/05/84/410584fa11653aec9eb8392e32deed8c.jpg",
+            "link": "https://www.w3schools.com/html/"
+        },
+        {
+            "id": 3,
+            "title": "Mathematics for Computing",
+            "description": "Essential math concepts for computer science.",
+            "image": "https://i.pinimg.com/736x/82/dd/96/82dd96c87ddff4b44a35458fc578cf32.jpg",
+            "link": "https://www.khanacademy.org/math"
+        },
+        {
+            "id": 4,
+            "title": "Fundamentals of Computer Science",
+            "description": "Understanding computers and how they work.",
+            "image": "https://i.pinimg.com/736x/64/a4/c2/64a4c212a61a5c47f4b859d4b2046d0c.jpg",
+            "link": "https://cs50.harvard.edu/"
+        },
+        {
+            "id": 5,
+            "title": "Digital Electronics Basics",
+            "description": "Learn about logic gates, circuits, and systems.",
+            "image": "https://i.pinimg.com/736x/b1/23/35/b123350613d327c06109ac37aac6b762.jpg",
+            "link": "https://www.tutorialspoint.com/digital_electronics/"
+        },
+        {
+            "id": 6,
+            "title": "Introduction to Operating Systems",
+            "description": "Learn how operating systems function.",
+            "image": "https://i.pinimg.com/736x/64/d0/fb/64d0fbc6e0967e57aa30695b28dde06e.jpg",
+            "link": "https://www.udacity.com/course/introduction-to-operating-systems--ud923"
+        },
+        {
+            "id": 7,
+            "title": "C Programming Basics",
+            "description": "Get started with the C programming language.",
+            "image": "https://i.pinimg.com/736x/51/16/39/511639ed8370cb83211f49e0d8f04af2.jpg",
+            "link": "https://www.learn-c.org/"
+        },
+        {
+            "id": 8,
+            "title": "Computer Networks Introduction",
+            "description": "Understand networking fundamentals.",
+            "image": "https://i.pinimg.com/736x/2d/00/54/2d005496398074d4e03c2e26d703697d.jpg",
+            "link": "https://www.coursera.org/learn/computer-networking"
+        },
+        {
+            "id": 9,
+            "title": "Database Management Systems",
+            "description": "Learn about relational databases and SQL.",
+            "image": "https://i.pinimg.com/736x/b6/c3/ca/b6c3ca5871e64cd51e4390b5ef81af55.jpg",
+            "link": "https://www.w3schools.com/sql/"
+        },
+        {
+            "id": 10,
+            "title": "Soft Skills for Engineers",
+            "description": "Improve communication and teamwork skills.",
+            "image": "https://i.pinimg.com/736x/d1/71/be/d171be14a8aa92ebae334773638426db.jpg",
+            "link": "https://www.udemy.com/course/soft-skills/"
+        }
+    ],
+    "Second Year": [
+        {
+            "id": 11,
+            "title": "Data Structures and Algorithms",
+            "description": "Master DSA with step-by-step explanations.",
+            "image": "https://i.pinimg.com/736x/df/6a/b3/df6ab324b30bb62681f5fa06f472307d.jpg",
+            "link": "https://www.geeksforgeeks.org/data-structures/"
+        },
+        {
+            "id": 12,
+            "title": "Cyber Security Basics",
+            "description": "Learn about online threats and security techniques.",
+            "image": "https://i.pinimg.com/736x/d1/81/40/d18140c380b3680979507bf0fbe3ca73.jpg",
+            "link": "https://www.cybrary.it/course/intro-to-cyber-security/"
+        },
+        {
+            "id": 13,
+            "title": "Java Programming",
+            "description": "Object-oriented programming with Java.",
+            "image": "https://i.pinimg.com/736x/43/0b/5a/430b5adba48d1687ed90bdb7d60e003c.jpg",
+            "link": "https://www.codecademy.com/learn/learn-java"
+        },
+        {
+            "id": 14,
+            "title": "Advanced Database Management",
+            "description": "Learn about NoSQL, normalization, and indexing.",
+            "image": "https://i.pinimg.com/736x/25/56/51/255651814121938569915512dde6470a.jpg",
+            "link": "https://www.coursera.org/learn/database-management"
+        },
+        {
+            "id": 15,
+            "title": "Operating Systems Advanced Concepts",
+            "description": "Learn about process scheduling and memory management.",
+            "image": "https://i.pinimg.com/736x/0f/fa/61/0ffa619f56ff250ecbbe70d551d06ff0.jpg",
+            "link": "https://www.udacity.com/course/advanced-operating-systems--ud189"
+        },
+        {
+            "id": 16,
+            "title": "Embedded Systems",
+            "description": "Introduction to microcontrollers and real-time OS.",
+            "image": "https://i.pinimg.com/736x/2d/51/e2/2d51e2b014429304b4b9bb7dd4865161.jpg",
+            "link": "https://www.coursera.org/learn/embedded-systems"
+        },
+        {
+            "id": 17,
+            "title": "Artificial Intelligence Basics",
+            "description": "Learn AI fundamentals and applications.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.edx.org/course/artificial-intelligence"
+        },
+        {
+            "id": 18,
+            "title": "Software Engineering Principles",
+            "description": "Learn software development methodologies.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.udemy.com/course/software-engineering/"
+        },
+        {
+            "id": 19,
+            "title": "Web Development with JavaScript",
+            "description": "Master JavaScript and front-end frameworks.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.theodinproject.com/courses/javascript"
+        },
+        {
+            "id": 20,
+            "title": "Version Control with Git",
+            "description": "Learn Git and GitHub workflows.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.codecademy.com/learn/learn-git"
+        }
+    ],
+    "Third Year": [
+        {
+            "id": 21,
+            "title": "Machine Learning Fundamentals",
+            "description": "An introduction to ML algorithms and techniques.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.coursera.org/learn/machine-learning"
+        },
+        {
+            "id": 22,
+            "title": "Mobile App Development",
+            "description": "Learn how to build Android and iOS apps.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://developer.android.com/courses"
+        },
+        {
+            "id": 23,
+            "title": "Software Testing & QA",
+            "description": "Understand software testing methodologies.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.udemy.com/course/software-testing/"
+        },
+        {
+            "id": 24,
+            "title": "Advanced Data Structures",
+            "description": "Deep dive into trees, graphs, and dynamic programming.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.geeksforgeeks.org/advanced-data-structures/"
+        },
+        {
+            "id": 25,
+            "title": "Internet of Things (IoT)",
+            "description": "Learn IoT concepts and build smart devices.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.coursera.org/specializations/iot"
+        },
+        {
+            "id": 26,
+            "title": "Big Data & Hadoop",
+            "description": "Learn how to handle big data using Hadoop.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.edx.org/course/big-data-and-hadoop"
+        },
+        {
+            "id": 27,
+            "title": "Blockchain Technology",
+            "description": "Understand blockchain and its applications.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.coursera.org/learn/blockchain-basics"
+        },
+        {
+            "id": 28,
+            "title": "Deep Learning Basics",
+            "description": "Introduction to neural networks and deep learning.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.udacity.com/course/deep-learning-pytorch--ud188"
+        },
+        {
+            "id": 29,
+            "title": "Cyber Security Advanced",
+            "description": "Advanced cyber security techniques and tools.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.cybrary.it/course/advanced-cyber-security/"
+        },
+        {
+            "id": 30,
+            "title": "Augmented Reality & Virtual Reality",
+            "description": "Learn about AR and VR development.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.udemy.com/course/ar-vr-development/"
+        }
+    ],
+    "Fourth Year": [
+        {
+            "id": 31,
+            "title": "Cloud Computing Basics",
+            "description": "Learn cloud concepts and deployment strategies.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.udacity.com/course/intro-to-cloud-computing--ud081"
+        },
+        {
+            "id": 32,
+            "title": "Full Stack Web Development",
+            "description": "Master front-end and back-end development.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.theodinproject.com/"
+        },
+        {
+            "id": 33,
+            "title": "Artificial Intelligence with Python",
+            "description": "Explore AI concepts using Python programming.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.edx.org/course/artificial-intelligence-with-python"
+        },
+        {
+            "id": 34,
+            "title": "DevOps & CI/CD",
+            "description": "Learn automation, Docker, and Kubernetes.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.udemy.com/course/devops-ci-cd/"
+        },
+        {
+            "id": 35,
+            "title": "Ethical Hacking & Penetration Testing",
+            "description": "Learn ethical hacking techniques and tools.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.pluralsight.com/courses/ethical-hacking-introduction"
+        },
+        {
+            "id": 36,
+            "title": "Robotics & Automation",
+            "description": "Understand robotics programming and automation.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.coursera.org/specializations/robotics"
+        },
+        {
+            "id": 37,
+            "title": "Advanced Computer Vision",
+            "description": "Explore image processing and deep learning models.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.udacity.com/course/computer-vision-nanodegree--nd891"
+        },
+        {
+            "id": 38,
+            "title": "Entrepreneurship for Engineers",
+            "description": "Learn how to start a tech startup.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.udacity.com/course/how-to-build-a-startup--ep245"
+        },
+        {
+            "id": 39,
+            "title": "Quantum Computing Basics",
+            "description": "Introduction to quantum mechanics in computing.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.edx.org/course/quantum-computing-fundamentals"
+        },
+        {
+            "id": 40,
+            "title": "Software Project Management",
+            "description": "Learn agile, scrum, and project planning.",
+            "image": "https://via.placeholder.com/150",
+            "link": "https://www.coursera.org/learn/software-processes"
+        }
+    ]
+}

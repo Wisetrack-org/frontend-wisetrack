@@ -1,13 +1,11 @@
 import { useState } from "react";
-import { FaPlay, FaPause, FaUserMd, FaSpa } from "react-icons/fa";
+import { FaPlay, FaPause, FaUserMd, FaSpa, FaMusic } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
-const meditationVideos = [
-  { id: 1, title: "Guided Meditation for Beginners", url: "https://www.youtube.com/embed/inpok4MKVLM" },
-  { id: 2, title: "5-Minute Deep Breathing Exercise", url: "https://www.youtube.com/embed/8zTTowG4S7E" },
-];
+
 
 const trainers = [
   { name: "Aarav Sharma", contact: "+91 98765 43210" },
@@ -15,6 +13,12 @@ const trainers = [
 ];
 
 const YogaMeditation = () => {
+
+
+const meditationVideos = [
+  { id: 1, title: "Guided Meditation", url: "https://www.youtube.com/embed/inpok4MKVLM" },
+  { id: 2, title: "Yoga for Beginners", url: "https://www.youtube.com/embed/v7AYKMP6rOE" }
+];
 
   const navigate = useNavigate();
 
@@ -67,24 +71,44 @@ const YogaMeditation = () => {
             ></iframe>
           ))}
         </div>
+
+        {/* View More Button */}
+        <div className="mt-6 flex justify-center">
+          <Link to="/videoLibrary">
+            <button className="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-6 rounded-lg transition-all">
+              View More Videos
+            </button>
+          </Link>
+        </div>
       </div>
 
-      {/* Deep Breathing Game */}
-      <div className="mt-8 text-center">
-        <h2 className="text-2xl font-bold mb-2">Deep Breathing Exercise</h2>
-        <motion.div
-          animate={{ scale: [1, 1.5, 1] }}
-          transition={{ repeat: Infinity, duration: 4 }}
-          className="w-24 h-24 bg-[#1e3a8a] rounded-full flex items-center justify-center text-xl font-bold"
-        >
-          Breathe
-        </motion.div>
+      {/* Button to View More Games */}
+      <div className="bg-[#1e3a8a] p-4 rounded-xl text-center shadow-lg w-full max-w-md mt-6">
+        <h2 className="text-xl font-semibold">Deep Breathing Exercise</h2>
+        <Link to="/gamesPage">
+          <button className="bg-blue-700 mt-4 hover:bg-blue-900 text-white font-bold py-2 px-6 rounded-lg transition-all">
+            Play More Games
+          </button>
+        </Link>
       </div>
 
-      {/* Relaxation Music */}
-      <button onClick={toggleMusic} className="mt-6 flex items-center gap-2 bg-[#1e3a8a] px-4 py-2 rounded-lg hover:bg-[#142654]">
-        {playing ? <FaPause /> : <FaPlay />} {playing ? "Pause Music" : "Play Relaxing Music"}
-      </button>
+
+      <div className="bg-[#1e3a8a] p-6 rounded-xl text-center shadow-lg w-full max-w-md mx-auto text-white mt-6">
+      <h2 className="text-2xl font-bold flex items-center justify-center gap-2">
+        <FaMusic /> Relaxation Music
+      </h2>
+      <p className="mt-2 text-gray-300 text-sm">
+        Enjoy calming sounds designed to reduce stress, enhance sleep, and improve focus. 
+        Explore different categories and find the perfect music for relaxation. 🎶
+      </p>
+      
+      {/* Navigate to Relaxation Music Page */}
+      <Link to="/relaxationMusic">
+        <button className="mt-4 bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-6 rounded-lg transition-all">
+          Explore Music Library
+        </button>
+      </Link>
+    </div>
 
       {/* Yoga Trainers */}
       <div className="mt-8 w-full max-w-lg">
