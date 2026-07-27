@@ -92,7 +92,7 @@ const Dashboard = () => {
       <section className="p-8 mx-6 mt-6">
         <h2 className="text-2xl font-bold text-center">🏆 Leaderboard</h2>
         <div className="bg-gray-800 p-6 mt-4 rounded-lg shadow-lg">
-          {["Alice", "Bob", "Charlie", "David", "Eve"].map((user, index) => (
+          {["Test", "Tejas", "Shivam", "Purva", "Sadia"].map((user, index) => (
             <div
               key={index}
               className="flex justify-between p-2 border-b border-gray-700"
@@ -126,7 +126,7 @@ const Dashboard = () => {
       </section>
 
       {/* Community Poll (Interactive) */}
-      <section className="p-8 mx-6 mt-6 bg-gray-800 rounded-xl shadow-lg">
+      {/* <section className="p-8 mx-6 mt-6 bg-gray-800 rounded-xl shadow-lg">
         <h2 className="text-2xl font-bold text-center">🗳️ Community Poll</h2>
         <p className="text-gray-400 text-center">
           Vote and see what others think!
@@ -152,7 +152,7 @@ const Dashboard = () => {
             </button>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="p-8 bg-gray-800 text-center mt-8">

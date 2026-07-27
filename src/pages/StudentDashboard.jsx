@@ -4,10 +4,11 @@ import Logout from '../components/Logout';
 
 const StudentDashboard = () => {
   const { user } = useSelector(state => state.auth);
+console.log();
 
-  const firstName = user?.first_name || '';
-  const lastName = user?.last_name || '';
-  const email = user?.email || '';
+  const firstName = user?.studentProfile?.first_name || '';
+  const lastName = user?.studentProfile.last_name || '';
+  const email = user?.studentProfile.email || '';
   
   return (
     <div className="dashboard">

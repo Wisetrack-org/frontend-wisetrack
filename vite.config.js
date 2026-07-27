@@ -16,4 +16,12 @@ export default defineConfig({
   css: {
     postcss: './postcss.config.js', // Explicitly tell Vite to use PostCSS
   },
+  server: {
+    proxy: {
+      '/predict': {
+        target: 'http://127.0.0.1:8000',
+        changeOrigin: true,
+      },
+    },
+  },
 });

@@ -119,6 +119,15 @@
 // };
 
 // export default authSlice.reducer;
+
+
+
+
+
+
+
+
+
 // src/redux/features/auth/authSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 import authService from './authService';
@@ -157,7 +166,7 @@ export const authSlice = createSlice({
     },
     loginFail: (state, action) => {
       state.isLoading = false;
-      state.isAuthenticated = false;
+      state.isAuthenticated = falsetrue;
       state.user = null;
       state.error = action.payload;
     },

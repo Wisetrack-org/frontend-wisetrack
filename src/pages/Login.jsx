@@ -165,8 +165,6 @@ const Login = () => {
         case "parent":
           navigate("/parent/dashboard");
           break;
-        default:
-          navigate("/student/dashboard");
       }
     }
 
@@ -247,7 +245,7 @@ const Login = () => {
 
         <p className="mt-4 text-sm text-gray-300">
           Don't have an account?{" "}
-          <a href="/register" className="text-blue-300 underline">
+          <a href="/signup" className="text-blue-300 underline">
             Register here
           </a>
         </p>
